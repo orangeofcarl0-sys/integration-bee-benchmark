@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below. Problem statements and answers remain copyright of their respective competition organizers."
+title: "Integration Bee Benchmark: 100 curated integration problems with official answers"
+abstract: >-
+  A 100-problem benchmark of integration problems from real integration bees (MIT Integration Bee
+  2023/2024/2025 qualifying exams, UK University Integration Bee 2025/26 Round 1, and the
+  University of Florida Integration Bee 2025 written exam). Every answer is taken from the
+  competition's own official answer key; every statement was transcribed from the official paper
+  and screened for consistency with its answer.
+authors:
+  - alias: "Integration Bee Benchmark contributors"
+version: "1.0"
+date-released: "2026-09-08"
+license: CC-BY-4.0
+repository-code: "https://github.com/orangeofcarl0-sys/integration-bee-benchmark"
+keywords:
+  - integration
+  - benchmark
+  - llm-evaluation
+  - mathematics
+  - integration bee

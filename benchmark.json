@@ -1,0 +1,708 @@
+{
+ "name": "Integration Bee Benchmark",
+ "version": "1.0",
+ "date": "2026-09-08",
+ "count": 100,
+ "problems": [
+  {
+   "id": "B001",
+   "source": "MIT 2024 Q1",
+   "verify": "A",
+   "problem": "\\int_{2023}^{2025} 2024\\,dx",
+   "answer": "4048"
+  },
+  {
+   "id": "B002",
+   "source": "MIT 2024 Q2",
+   "verify": "A",
+   "problem": "\\int \\frac{(x-1)^{\\log(x+1)}}{(x+1)^{\\log(x-1)}}\\,dx",
+   "answer": "x"
+  },
+  {
+   "id": "B003",
+   "source": "MIT 2024 Q3",
+   "verify": "A",
+   "problem": "\\int (x\\log x + 2x)\\,dx",
+   "answer": "\\tfrac12 x^2\\log x + \\tfrac34 x^2"
+  },
+  {
+   "id": "B004",
+   "source": "MIT 2024 Q4",
+   "verify": "A",
+   "problem": "\\int \\frac{dx}{x\\log x + 2x}",
+   "answer": "\\log(\\log x + 2)"
+  },
+  {
+   "id": "B005",
+   "source": "MIT 2024 Q5",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} \\arccos(\\sin x)\\,dx",
+   "answer": "\\pi^2"
+  },
+  {
+   "id": "B006",
+   "source": "MIT 2024 Q6",
+   "verify": "A",
+   "problem": "\\int \\frac{\\cos x + \\cot x + \\csc x + 1}{\\sin x + \\tan x + \\sec x + 1}\\,dx",
+   "answer": "\\log(\\sin x)"
+  },
+  {
+   "id": "B007",
+   "source": "MIT 2024 Q7",
+   "verify": "A",
+   "problem": "\\int \\frac{x^{2024}-1}{x^{506}-1}\\,dx",
+   "answer": "x + \\frac{x^{507}}{507} + \\frac{x^{1013}}{1013} + \\frac{x^{1519}}{1519}"
+  },
+  {
+   "id": "B008",
+   "source": "MIT 2024 Q8",
+   "verify": "A",
+   "problem": "\\int_{-1}^{1} (5x^3-3x)^2\\,dx",
+   "answer": "\\tfrac87"
+  },
+  {
+   "id": "B009",
+   "source": "MIT 2024 Q9",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} (\\sin x + \\cos x)^{11}\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B010",
+   "source": "MIT 2024 Q10",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} (\\sinh x + \\cosh x)^{11}\\,dx",
+   "answer": "\\frac{e^{22\\pi}-1}{11}"
+  },
+  {
+   "id": "B011",
+   "source": "MIT 2024 Q11",
+   "verify": "N",
+   "problem": "\\int \\csc^2(x)\\tan^{2024}(x)\\,dx",
+   "answer": "\\frac{\\tan^{2023}(x)}{2023}"
+  },
+  {
+   "id": "B012",
+   "source": "MIT 2024 Q12",
+   "verify": "N",
+   "problem": "\\int \\cos^x(x)\\big(\\log(\\cos x) - x\\tan x\\big)\\,dx",
+   "answer": "\\cos^x(x)"
+  },
+  {
+   "id": "B013",
+   "source": "MIT 2024 Q13",
+   "verify": "N",
+   "problem": "\\int_{-\\infty}^{\\infty} e^{-(x-2024)^2/4}\\,dx",
+   "answer": "2\\sqrt{\\pi}"
+  },
+  {
+   "id": "B014",
+   "source": "MIT 2024 Q14",
+   "verify": "A",
+   "problem": "\\int_{1/e}^{e} \\left(1-\\frac{1}{x^2}\\right)e^{e^x+1/x}\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B015",
+   "source": "MIT 2024 Q15",
+   "verify": "A",
+   "problem": "\\int (x+1-e^{-x})e^{xe^x}\\,dx",
+   "answer": "e^{(e^x-1)x}"
+  },
+  {
+   "id": "B016",
+   "source": "MIT 2024 Q16",
+   "verify": "A",
+   "problem": "\\int \\left(\\frac{\\arctan(x)}{1-x^2} + \\frac{\\operatorname{arctanh}(x)}{1+x^2}\\right)dx",
+   "answer": "\\arctan(x)\\operatorname{arctanh}(x)"
+  },
+  {
+   "id": "B017",
+   "source": "MIT 2024 Q17",
+   "verify": "A",
+   "problem": "\\int \\left(\\sum_{k=0}^{\\infty} \\sin\\!\\left(\\frac{k\\pi}{2}\\right)x^k\\right)dx",
+   "answer": "\\frac{\\log(x^2+1)}{2}"
+  },
+  {
+   "id": "B018",
+   "source": "MIT 2024 Q19",
+   "verify": "A",
+   "problem": "\\int \\frac{x^4}{3-6x+6x^2-4x^3+2x^4}\\,dx",
+   "answer": "\\frac{x}{2} + \\frac14\\log(3-6x+6x^2-4x^3+2x^4)"
+  },
+  {
+   "id": "B019",
+   "source": "MIT 2024 Q20",
+   "verify": "N",
+   "problem": "\\int_1^3 \\frac{x + \\frac{x+\\cdots}{1+\\cdots}}{1 + \\frac{x+\\cdots}{1+\\cdots}}\\,dx",
+   "answer": "2\\sqrt3 - \\tfrac23"
+  },
+  {
+   "id": "B020",
+   "source": "MIT 2025 Q1",
+   "verify": "A",
+   "problem": "\\int \\frac{x+\\sqrt{x}}{1+\\sqrt{x}}\\,dx",
+   "answer": "\\tfrac23 x^{3/2}"
+  },
+  {
+   "id": "B021",
+   "source": "MIT 2025 Q2",
+   "verify": "A",
+   "problem": "\\int \\frac{e^{x+1}}{e^x+1}\\,dx",
+   "answer": "e\\log(e^x+1)"
+  },
+  {
+   "id": "B022",
+   "source": "MIT 2025 Q3",
+   "verify": "A",
+   "problem": "\\int \\sqrt[3]{3\\sin(x)-\\sin(3x)}\\,dx",
+   "answer": "-\\sqrt[3]{4}\\cos(x)"
+  },
+  {
+   "id": "B023",
+   "source": "MIT 2025 Q4",
+   "verify": "A",
+   "problem": "\\int_1^{e^e} \\frac{\\log\\!\\big(x^{\\log(x^x)}\\big)}{x^2}\\,dx",
+   "answer": "\\frac{e^3}{3}"
+  },
+  {
+   "id": "B024",
+   "source": "MIT 2025 Q5",
+   "verify": "A",
+   "problem": "\\int_{-\\pi/2}^{\\pi/2} \\cos(20x)\\sin(25x)\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B025",
+   "source": "MIT 2025 Q6",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} \\sin(x)\\cos(x)\\tan(x)\\cot(x)\\sec(x)\\csc(x)\\,dx",
+   "answer": "2\\pi"
+  },
+  {
+   "id": "B026",
+   "source": "MIT 2025 Q7",
+   "verify": "A",
+   "problem": "\\int \\frac{x\\log(x)\\cos(x)-\\sin(x)}{x\\log^2(x)}\\,dx",
+   "answer": "\\frac{\\sin(x)}{\\log(x)}"
+  },
+  {
+   "id": "B027",
+   "source": "MIT 2025 Q8",
+   "verify": "A",
+   "problem": "\\int_1^2 \\big(2^{x-1}+\\log_2(2x)\\big)\\,dx",
+   "answer": "3"
+  },
+  {
+   "id": "B028",
+   "source": "MIT 2025 Q9",
+   "verify": "A",
+   "problem": "\\int_0^1 x^{2024}(1-x^{2025})^{2025}\\,dx",
+   "answer": "\\frac{1}{2025\\cdot 2026}"
+  },
+  {
+   "id": "B029",
+   "source": "MIT 2025 Q10",
+   "verify": "A",
+   "problem": "\\int_0^{10} x\\left(x-\\tfrac12\\right)(x-1)\\,dx",
+   "answer": "2025"
+  },
+  {
+   "id": "B030",
+   "source": "MIT 2025 Q11",
+   "verify": "N",
+   "problem": "\\int_0^{20} \\left\\lfloor \\frac{\\lceil x\\rceil}{2}\\right\\rfloor dx",
+   "answer": "100"
+  },
+  {
+   "id": "B031",
+   "source": "MIT 2025 Q12",
+   "verify": "N",
+   "problem": "\\int \\sqrt[3]{x\\sqrt[4]{x\\sqrt[5]{x\\sqrt[6]{\\cdots}}}}\\,dx",
+   "answer": "\\frac{x^2}{2}"
+  },
+  {
+   "id": "B032",
+   "source": "MIT 2025 Q13",
+   "verify": "A",
+   "problem": "\\int \\frac{e^{2x}(x^2+x)}{(xe^x)^4+1}\\,dx",
+   "answer": "\\tfrac12\\arctan(x^2e^{2x})"
+  },
+  {
+   "id": "B033",
+   "source": "MIT 2025 Q14",
+   "verify": "A",
+   "problem": "\\int \\big(\\sec^4(x)-\\tan^4(x)\\big)\\,dx",
+   "answer": "2\\tan(x)-x"
+  },
+  {
+   "id": "B034",
+   "source": "MIT 2025 Q15",
+   "verify": "N",
+   "problem": "\\int_0^1 \\sqrt{x(1-x)}\\,dx",
+   "answer": "\\frac{\\pi}{8}"
+  },
+  {
+   "id": "B035",
+   "source": "MIT 2025 Q16",
+   "verify": "A",
+   "problem": "\\int \\frac{\\sin(4x)\\cos(x)}{\\cos(2x)\\sin(x)}\\,dx",
+   "answer": "2x+\\sin(2x)"
+  },
+  {
+   "id": "B036",
+   "source": "MIT 2025 Q17",
+   "verify": "N",
+   "problem": "\\int \\sin(x)\\sinh(x)\\,dx",
+   "answer": "\\tfrac12\\big(\\sin(x)\\cosh(x)-\\cos(x)\\sinh(x)\\big)"
+  },
+  {
+   "id": "B037",
+   "source": "MIT 2025 Q18",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/3} \\sin(x)\\cos\\!\\left(\\frac{\\pi}{3}-x\\right)dx",
+   "answer": "\\frac{\\pi}{4\\sqrt3}"
+  },
+  {
+   "id": "B038",
+   "source": "MIT 2025 Q19",
+   "verify": "A",
+   "problem": "\\int \\left(\\cos(x)+\\cos\\!\\left(x+\\frac{2\\pi}{3}\\right)+\\cos\\!\\left(x-\\frac{2\\pi}{3}\\right)\\right)^2 dx",
+   "answer": "0"
+  },
+  {
+   "id": "B039",
+   "source": "MIT 2025 Q20",
+   "verify": "N",
+   "problem": "\\int_0^1 \\left(\\sum_{k=1}^{\\infty}(-1)^k x^{2k}\\right)dx",
+   "answer": "\\frac{\\pi}{4}-1"
+  },
+  {
+   "id": "B040",
+   "source": "MIT 2023 Q1",
+   "verify": "A",
+   "problem": "\\int x^{\\frac{1}{\\log x}}\\,dx",
+   "answer": "ex"
+  },
+  {
+   "id": "B041",
+   "source": "MIT 2023 Q2",
+   "verify": "A",
+   "problem": "\\int \\operatorname{sech}(x)\\,dx",
+   "answer": "2\\arctan(e^x)"
+  },
+  {
+   "id": "B042",
+   "source": "MIT 2023 Q3",
+   "verify": "A",
+   "problem": "\\int \\frac{e^x}{(1+e^x)\\log(1+e^x)}\\,dx",
+   "answer": "\\log(\\log(1+e^x))"
+  },
+  {
+   "id": "B043",
+   "source": "MIT 2023 Q4",
+   "verify": "N",
+   "problem": "\\int (1+x+x^2+x^3+x^4)(1-x+x^2-x^3+x^4)\\,dx",
+   "answer": "x+\\frac{x^3}{3}+\\frac{x^5}{5}+\\frac{x^7}{7}+\\frac{x^9}{9}"
+  },
+  {
+   "id": "B044",
+   "source": "MIT 2023 Q5",
+   "verify": "N",
+   "problem": "\\int_0^4 \\binom{x}{5}\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B045",
+   "source": "MIT 2023 Q6",
+   "verify": "A",
+   "problem": "\\int \\big(x+\\sin(x)+x\\cos(x)+\\sin(x)\\cos(x)\\big)\\,dx",
+   "answer": "\\frac{(x+\\sin x)^2}{2}"
+  },
+  {
+   "id": "B046",
+   "source": "MIT 2023 Q7",
+   "verify": "A",
+   "problem": "\\int \\big(\\sin^2x+\\cos^2x+\\tan^2x+\\cot^2x+\\sec^2x+\\csc^2x\\big)\\,dx",
+   "answer": "2\\tan x - 2\\cot x - x"
+  },
+  {
+   "id": "B047",
+   "source": "MIT 2023 Q8",
+   "verify": "N",
+   "problem": "\\int_0^{2\\pi} \\lfloor 2023\\sin(x)\\rfloor\\,dx",
+   "answer": "-\\pi"
+  },
+  {
+   "id": "B048",
+   "source": "MIT 2023 Q9",
+   "verify": "A",
+   "problem": "\\int (2\\log x+1)e^{(\\log x)^2}\\,dx",
+   "answer": "x\\,e^{(\\log x)^2}"
+  },
+  {
+   "id": "B049",
+   "source": "MIT 2023 Q10",
+   "verify": "A",
+   "problem": "\\int \\Big((1-x)^3+(x-x^2)^3+(x^2-1)^3-3(1-x)(x-x^2)(x^2-1)\\Big)dx",
+   "answer": "0"
+  },
+  {
+   "id": "B050",
+   "source": "MIT 2023 Q11",
+   "verify": "A",
+   "problem": "\\int_{-2023}^{2023} \\underbrace{\\big|\\,\\big|\\,\\big|\\,\\big|\\,|x|-1\\,\\big|-1\\,\\big|\\cdots-1\\,\\big|}_{2023\\ \\text{“}-1\\text{”s}}\\,dx",
+   "answer": "2023"
+  },
+  {
+   "id": "B051",
+   "source": "MIT 2023 Q13",
+   "verify": "A",
+   "problem": "\\int (x+e+1)x^e e^x\\,dx",
+   "answer": "x^{e+1}e^x"
+  },
+  {
+   "id": "B052",
+   "source": "MIT 2023 Q15",
+   "verify": "A",
+   "problem": "\\int \\frac{1+2x^{2022}}{x+x^{2023}}\\,dx",
+   "answer": "\\frac{1}{2022}\\log\\!\\big(x^{2022}+x^{4044}\\big)"
+  },
+  {
+   "id": "B053",
+   "source": "MIT 2023 Q16",
+   "verify": "A",
+   "problem": "\\int \\big(3\\sin(20x)\\cos(23x)+20\\sin(43x)\\big)\\,dx",
+   "answer": "\\sin(20x)\\sin(23x)"
+  },
+  {
+   "id": "B054",
+   "source": "MIT 2023 Q17",
+   "verify": "N",
+   "problem": "\\int_0^1 \\prod_{k=0}^{\\infty} \\frac{1}{1+x^{2^k}}\\,dx",
+   "answer": "\\tfrac12"
+  },
+  {
+   "id": "B055",
+   "source": "MIT 2023 Q19",
+   "verify": "N",
+   "problem": "\\int \\frac{\\log(x/\\pi)}{(\\log x)^{\\log(\\pi e)}}\\,dx",
+   "answer": "\\frac{x}{(\\log x)^{\\log\\pi}}"
+  },
+  {
+   "id": "B056",
+   "source": "MIT 2023 Q20",
+   "verify": "N",
+   "problem": "\\int_{-3/2}^{-1/2} \\big(x^5+5x^4+10x^3+8x^2+x\\big)\\,dx",
+   "answer": "\\tfrac56"
+  },
+  {
+   "id": "B057",
+   "source": "UKUIB 2025 R1 #1",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/4} \\frac{dx}{x^2+1}",
+   "answer": "\\arctan\\!\\left(\\frac{\\pi}{4}\\right)"
+  },
+  {
+   "id": "B058",
+   "source": "UKUIB 2025 R1 #2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty} \\sin(\\pi\\lfloor x\\rfloor)\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B059",
+   "source": "UKUIB 2025 R1 #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty} \\operatorname{sech}(2\\ln x)\\,dx",
+   "answer": "\\frac{\\pi}{\\sqrt2}"
+  },
+  {
+   "id": "B060",
+   "source": "UKUIB 2025 R1 #4",
+   "verify": "A",
+   "problem": "\\int_0^a e^{i\\pi/2}\\,dz",
+   "answer": "ai"
+  },
+  {
+   "id": "B061",
+   "source": "UKUIB 2025 R1 #5",
+   "verify": "A",
+   "problem": "\\int_{-\\pi/2}^{\\pi/2} \\frac{\\cos x}{1+e^{x/2}}\\,dx",
+   "answer": "1"
+  },
+  {
+   "id": "B062",
+   "source": "UKUIB 2025 R1 #6",
+   "verify": "N",
+   "problem": "\\int_0^1 \\sqrt{-\\ln x}\\,dx",
+   "answer": "\\frac{\\sqrt\\pi}{2}"
+  },
+  {
+   "id": "B063",
+   "source": "UKUIB 2025 R1 #7",
+   "verify": "N",
+   "problem": "\\int_0^1\\Big(1+x+x^2+\\cdots+x^{2025} - \\big(\\{x\\}+\\{x\\{x\\}\\}+\\{x\\{x\\{x\\}\\}\\}+\\cdots+\\underbrace{\\{x\\{\\cdots\\{x\\}\\cdots\\}\\}}_{2025\\ \\text{times}}\\big)\\Big)dx",
+   "answer": "1"
+  },
+  {
+   "id": "B064",
+   "source": "UKUIB 2025 R1 #8",
+   "verify": "A",
+   "problem": "\\int_0^{\\infty}\\left(1-\\frac{x}{1}\\left(1-\\frac{x}{2}\\left(1-\\frac{x}{3}\\left(1-\\frac{x}{4}(\\cdots)\\right)\\right)\\right)\\right)dx",
+   "answer": "1"
+  },
+  {
+   "id": "B065",
+   "source": "UKUIB 2025 R1 #9",
+   "verify": "N",
+   "problem": "\\int_{-\\pi/4}^{\\pi/4} \\frac{7x^7-5x^5+3x^3-x+1}{\\cos^2(x)}\\,dx",
+   "answer": "2"
+  },
+  {
+   "id": "B066",
+   "source": "UKUIB 2025 R1 #10",
+   "verify": "A",
+   "problem": "\\int_0^{\\pi/2} \\frac{\\tan^{-1}(b\\sin x)}{\\sin x}\\,dx",
+   "answer": "\\frac{\\pi}{2}\\sinh^{-1}(b) = \\frac{\\pi}{2}\\ln\\!\\big(b+\\sqrt{b^2+1}\\big)"
+  },
+  {
+   "id": "B067",
+   "source": "UKUIB 2025 R1 #11",
+   "verify": "A",
+   "problem": "\\int \\frac{dx}{x\\sin^{-1}(\\ln x)\\sqrt{1-(\\ln x)^2}}",
+   "answer": "\\ln\\big|\\sin^{-1}(\\ln x)\\big| + C"
+  },
+  {
+   "id": "B068",
+   "source": "UKUIB 2025 R1 #12",
+   "verify": "A",
+   "problem": "\\lim_{n\\to\\infty}\\int_0^1 \\big|x-|x^2-|x^3-\\cdots-|x^{n-1}-|x^n||\\cdots|\\big|\\,dx",
+   "answer": "1-\\ln 2"
+  },
+  {
+   "id": "B069",
+   "source": "UKUIB 2025 R1 #13",
+   "verify": "A",
+   "problem": "\\int_{|x|+|y|+|z|\\le 1} \\big\\lceil x^2+y^2+z^2\\big\\rceil\\,dx\\,dy\\,dz",
+   "answer": "\\frac43"
+  },
+  {
+   "id": "B070",
+   "source": "UKUIB 2025 R1 #14",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} \\sin(\\sin x + 2025x)\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B071",
+   "source": "UKUIB 2025 R1 #15",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi} \\sqrt{1+\\sin(2x)}\\,dx",
+   "answer": "2\\sqrt2"
+  },
+  {
+   "id": "B072",
+   "source": "UKUIB 2025 R1 #16",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty} \\frac{dx}{(x^4+1)^2}",
+   "answer": "\\frac{3\\pi}{8\\sqrt2}"
+  },
+  {
+   "id": "B073",
+   "source": "UKUIB 2025 R1 #17",
+   "verify": "A",
+   "problem": "\\int_1^{\\infty} \\frac{dx}{x+nx^n} \\quad (n>1)",
+   "answer": "\\frac{1}{1-n}\\ln\\!\\left(\\frac{n}{n+1}\\right)"
+  },
+  {
+   "id": "B074",
+   "source": "UKUIB 2025 R1 #18",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2} \\frac{x}{\\tan x}\\,dx",
+   "answer": "\\frac{\\pi}{2}\\ln 2"
+  },
+  {
+   "id": "B075",
+   "source": "UKUIB 2025 R1 #19",
+   "verify": "A",
+   "problem": "\\int_0^{2025}\\left(\\frac{x}{\\sqrt{x+\\sqrt{x+\\sqrt{x+\\cdots}}}} - \\sqrt{x-\\sqrt{x-\\sqrt{x-\\cdots}}}\\right)dx",
+   "answer": "0"
+  },
+  {
+   "id": "B076",
+   "source": "UKUIB 2025 R1 #20",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}\\int_0^1 \\exp\\!\\big(t+t^{\\tan\\theta}\\big)\\,dt\\,d\\theta",
+   "answer": "\\frac{\\pi}{4}\\big(e^2-1\\big)"
+  },
+  {
+   "id": "B077",
+   "source": "UKUIB 2025 R1 #21",
+   "verify": "A",
+   "problem": "\\int_0^1\\cdots\\int_0^1 \\max(x_1,\\dots,x_{2025})\\,dx_1\\cdots dx_{2025}",
+   "answer": "\\frac{2025}{2026}"
+  },
+  {
+   "id": "B078",
+   "source": "UKUIB 2025 R1 #22",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\left(\\frac{x}{(2^x-1)^2} - \\frac{4x}{(4^x-1)^2}\\right)dx",
+   "answer": "\\frac{1}{\\ln 2}"
+  },
+  {
+   "id": "B079",
+   "source": "UKUIB 2025 R1 #23",
+   "verify": "N",
+   "problem": "\\int_1^{e}\\left(\\sqrt{\\ln x} + \\frac{1}{e-1}\\exp\\!\\left(\\left(\\frac{x-1}{e-1}\\right)^2\\right)\\right)dx",
+   "answer": "e"
+  },
+  {
+   "id": "B080",
+   "source": "UKUIB 2025 R1 #24",
+   "verify": "A",
+   "problem": "\\int_0^{\\infty} \\frac{x^2 + 2^{-x/7} - 2^{-x/6}}{(2^{-x/7}+36x^2)(2^{-x/6}+49x^2)}\\,dx",
+   "answer": "0"
+  },
+  {
+   "id": "B081",
+   "source": "UKUIB 2025 R1 #25",
+   "verify": "N",
+   "problem": "\\int_0^{25} \\sqrt{1+x\\sqrt{1+(x+1)\\sqrt{1+(x+2)\\sqrt{\\cdots}}}}\\,dx",
+   "answer": "\\frac{675}{2}"
+  },
+  {
+   "id": "B082",
+   "source": "UKUIB 2025 R1 #26",
+   "verify": "N",
+   "problem": "\\int_0^1 \\frac{x(x-1)}{(x+1)\\ln x}\\,dx",
+   "answer": "\\ln\\!\\left(\\frac{4}{\\pi}\\right)"
+  },
+  {
+   "id": "B083",
+   "source": "UKUIB 2025 R1 #27",
+   "verify": "A",
+   "problem": "\\int \\frac{2^x}{(1+\\sqrt3)^x+(2+\\sqrt3)^x}\\,dx",
+   "answer": "\\frac{(\\sqrt3-1)x - \\ln\\!\\big(1+(\\sqrt3-1)^x\\big)}{\\ln(\\sqrt3-1)} + C"
+  },
+  {
+   "id": "B084",
+   "source": "UKUIB 2025 R1 #28",
+   "verify": "O",
+   "problem": "\\int_{-90}^{90} \\operatorname{mrt}\\big(x^3-(3+a)x^2+(4+2a)x-(2+a)\\big)\\,da",
+   "answer": "90\\big(45-\\sqrt{2024}\\big) - 2\\ln\\!\\big(45-\\sqrt{2024}\\big) - 3\\ln 2"
+  },
+  {
+   "id": "B085",
+   "source": "UKUIB 2025 R1 #29",
+   "verify": "N",
+   "problem": "\\int_0^{124} (f(x))^2\\,dx,\\quad \\text{where } f:[0,\\infty)\\to\\mathbb{R}\\ \\text{satisfies } (f(x))^3+xf(x)=125",
+   "answer": "812"
+  },
+  {
+   "id": "B086",
+   "source": "UKUIB 2025 R1 #30",
+   "verify": "N",
+   "problem": "\\int_1^2 \\frac{\\tan^{-1}(1+x)}{x}\\,dx",
+   "answer": "\\frac{3\\pi\\ln 2}{8} = \\frac{\\ln 2\\,(\\tan^{-1}3+\\tan^{-1}2)}{2}"
+  },
+  {
+   "id": "B087",
+   "source": "Florida 2025 #4",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi} \\max(\\sin x,\\cos x)\\,dx",
+   "answer": "2\\sqrt2"
+  },
+  {
+   "id": "B088",
+   "source": "Florida 2025 #5",
+   "verify": "A",
+   "problem": "\\int \\frac{dx}{(x-1)(x-2)(x-3)(x-4)}",
+   "answer": "\\frac16\\big(-\\ln(x-1)+3\\ln(x-2)-3\\ln(x-3)+\\ln(x-4)\\big)"
+  },
+  {
+   "id": "B089",
+   "source": "Florida 2025 #6",
+   "verify": "A",
+   "problem": "\\int_0^{\\pi} \\sin^4(x)\\cos^2(x)\\,dx",
+   "answer": "\\frac{\\pi}{16}"
+  },
+  {
+   "id": "B090",
+   "source": "Florida 2025 #7",
+   "verify": "A",
+   "problem": "\\int \\frac{\\sin x+\\cos x}{2\\sin x+3\\cos x}\\,dx",
+   "answer": "\\frac{1}{13}\\big(5x-\\ln(2\\sin x+3\\cos x)\\big)"
+  },
+  {
+   "id": "B091",
+   "source": "Florida 2025 #8",
+   "verify": "A",
+   "problem": "\\int \\frac{e^x(x-3)}{(x+1)^5}\\,dx",
+   "answer": "\\frac{e^x}{(x+1)^4}"
+  },
+  {
+   "id": "B092",
+   "source": "Florida 2025 #9",
+   "verify": "A",
+   "problem": "\\int \\big(\\sec^6(x)-\\tan^6(x)\\big)\\,dx",
+   "answer": "x+\\tan^3(x)"
+  },
+  {
+   "id": "B093",
+   "source": "Florida 2025 #10",
+   "verify": "A",
+   "problem": "\\int_1^{2025} \\sqrt{1+\\frac{1}{x^2}+\\frac{1}{(x+1)^2}}\\,dx",
+   "answer": "2024+\\ln\\!\\left(\\frac{2025}{1013}\\right)"
+  },
+  {
+   "id": "B094",
+   "source": "Florida 2025 #13",
+   "verify": "A",
+   "problem": "\\int_0^{\\pi/4} \\cfrac{1}{2\\tan x + \\cfrac{1}{2\\tan x + \\cfrac{1}{2\\tan x + \\cdots}}}\\,dx",
+   "answer": "\\ln\\!\\left(1+\\frac{1}{\\sqrt2}\\right)"
+  },
+  {
+   "id": "B095",
+   "source": "Florida 2025 #14",
+   "verify": "A",
+   "problem": "\\int_0^1 \\frac{\\sqrt{x}-\\sqrt[4]{x}}{\\ln x}\\,dx",
+   "answer": "\\ln\\!\\left(\\frac65\\right)"
+  },
+  {
+   "id": "B096",
+   "source": "Florida 2025 #16",
+   "verify": "A",
+   "problem": "\\int \\frac{\\ln x}{x}\\cdot\\frac{dx}{x^{\\ln x}+x^{-\\ln x}}",
+   "answer": "\\tfrac12\\arctan\\!\\big(x^{\\ln x}\\big)"
+  },
+  {
+   "id": "B097",
+   "source": "Florida 2025 #17",
+   "verify": "A",
+   "problem": "\\int_{-\\infty}^{\\infty} (20x+25)e^{-2025x^2}\\,dx",
+   "answer": "\\frac{5\\sqrt\\pi}{9}"
+  },
+  {
+   "id": "B098",
+   "source": "Florida 2025 #18",
+   "verify": "A",
+   "problem": "\\lim_{n\\to\\infty} \\sqrt{n}\\int_0^2 \\big[x(2-x)\\big]^n\\,dx",
+   "answer": "\\sqrt{\\pi}"
+  },
+  {
+   "id": "B099",
+   "source": "Florida 2025 #20",
+   "verify": "A",
+   "problem": "\\frac{\\displaystyle\\int_0^{\\infty}(1+x^2)^{-2024}\\,dx}{\\displaystyle\\int_0^{\\infty}(1+x^2)^{-2025}\\,dx}",
+   "answer": "\\frac{4048}{4047}"
+  },
+  {
+   "id": "B100",
+   "source": "Florida 2025 #21",
+   "verify": "A",
+   "problem": "\\int \\frac{xe^x-e^x}{x^2+e^{2x}}\\,dx",
+   "answer": "\\arctan\\!\\left(\\frac{e^x}{x}\\right)"
+  }
+ ]
+}

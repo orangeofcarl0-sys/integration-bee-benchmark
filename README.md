@@ -8,8 +8,8 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 
 | File | Description |
 |---|---|
-| [`INTEGRATION-BEE-BENCHMARK.md`](INTEGRATION-BEE-BENCHMARK.md) | Core set, human-readable (LaTeX in Markdown) |
-| [`benchmark.json`](benchmark.json) | Core set, machine-readable |
+| [`BASE-SET.md`](BASE-SET.md) | Base Set, human-readable (LaTeX in Markdown) |
+| [`base-set.json`](base-set.json) | Base Set, machine-readable |
 | [`HARD-SET.md`](HARD-SET.md) | Hard Set (MIT Finals 2022–2026), human-readable |
 | [`hard-set.json`](hard-set.json) | Hard Set, machine-readable |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | Source-by-source copyright and attribution |
@@ -21,13 +21,13 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 
 | Tier | Problems | Rounds | File |
 |---|---|---|---|
-| **Core** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `benchmark.json` |
+| **Base** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `base-set.json` |
 | **Hard** | 25 | MIT Integration Bee **Finals** 2022–2026 (4–5 min per problem) | `hard-set.json` |
 
-The two tiers share the same schema and grading rules; `id`s are `B###` (core) and `H###` (hard).
+The two sets share the same schema and grading rules; `id`s are `B###` (Base) and `H###` (Hard).
 Run them separately or concatenate the `problems` arrays.
 
-## Composition — Core (100)
+## Composition — Base Set (100)
 
 | Source | Problems | Official answer key |
 |---|---|---|
@@ -83,7 +83,7 @@ Each problem: `id` (stable identifier), `source` (competition, year, problem num
 ```python
 import json
 
-with open("benchmark.json", encoding="utf-8") as f:
+with open("base-set.json", encoding="utf-8") as f:
     data = json.load(f)
 
 print(data["count"], "problems")
@@ -93,14 +93,16 @@ for p in data["problems"][:3]:
 
 ## Grading
 
-[`grade.py`](grade.py) is a reference grader: it checks a solver's answers against `benchmark.json`
+[`grade.py`](grade.py) is a reference grader: it checks a solver's answers against `base-set.json`
+(or `hard-set.json` with `--set hard`)
 while accepting **mathematically equivalent forms** — different but equal closed forms, additive
 constants for indefinite integrals (the `+C` convention), equivalent algebraic/trig rewrites, and
 high-precision decimal approximations of exact constants. Only dependency: `sympy`.
 
 ```bash
 pip install sympy
-python grade.py --answers answers.json          # per-item PASS/FAIL table + score
+python grade.py --answers answers.json          # Base Set: per-item PASS/FAIL table + score
+python grade.py --set hard --answers answers.json   # Hard Set
 python grade.py --answers answers.json --json results.json
 python grade.py --selftest                      # validates the reader against the official key
 ```
@@ -168,9 +170,19 @@ id (resolved under `--dsh-home`, default `$DSH_HOME` or `~/.dsh`). Override the 
 
 ## Changelog
 
+### v1.2 — 2026-09-09
+Split the bank explicitly into two sets and renamed the files accordingly:
+
+- **Base Set** — the original 100 problems (`BASE-SET.md`, `base-set.json`; ids `B001`–`B100`).
+- **Hard Set** — the 25 MIT Finals problems (`HARD-SET.md`, `hard-set.json`; ids `H001`–`H025`).
+
+`benchmark.json` / `INTEGRATION-BEE-BENCHMARK.md` are renamed to `base-set.json` / `BASE-SET.md`
+(no content change). `grade.py` now defaults to `base-set.json` and accepts `--set hard` for the
+Hard Set; `--selftest` validates whichever set is selected (base 100/100, hard 25/25).
+
 ### v1.1 — 2026-09-09
 Added the **Hard Set**: all 25 MIT Integration Bee Finals problems 2022–2026 with official answers
-(`HARD-SET.md`, `hard-set.json`). Motivation: the core set draws only on entry-round material and
+(`HARD-SET.md`, `hard-set.json`). Motivation: the Base Set draws only on entry-round material and
 had no knockout-round problems at all, which capped its difficulty. Every Hard Set item was verified
 (definite integrals by 35-digit quadrature; indefinite by differentiating the official antiderivative;
 floor/limit problems by exact combinatorial arguments — e.g. H015 is exactly `4/11` by a dyadic

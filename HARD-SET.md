@@ -2,7 +2,7 @@
 
 **25 problems from the MIT Integration Bee Finals, 2022–2026 — with the organizers' official answers.**
 
-Companion to the [Core 100](INTEGRATION-BEE-BENCHMARK.md). The Core set draws on qualifying /
+Companion to the [Base Set](BASE-SET.md). The Base Set draws on qualifying /
 online / written rounds (entry-level speed rounds); this Hard Set is the other end of the
 difficulty scale: one problem per finalist, 4–5 minutes each, from the MIT Integration Bee Finals.
 

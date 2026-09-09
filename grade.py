@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Reference answer grader for the Integration Bee Benchmark.
 
-Scores a solver's answers against benchmark.json while accepting
+Scores a solver's answers against the Base Set (base-set.json) or the Hard Set
+(hard-set.json) while accepting
 mathematically equivalent forms: different but equal closed forms, additive
 constants for indefinite integrals, equivalent algebraic/trig rewrites, and
 high-precision decimal approximations of exact constants.
@@ -10,9 +11,10 @@ Only dependency: sympy (mpmath ships with it).
 
 Usage
 -----
-    python grade.py --answers answers.json
+    python grade.py --answers answers.json                 # Base Set (default)
+    python grade.py --set hard --answers answers.json      # Hard Set
     python grade.py --answers a.json --json out.json
-    python grade.py --selftest
+    python grade.py --selftest                             # validate the selected set
 
 Answer file format (JSON) -- a list, or an object with an "answers" key::
 
@@ -373,24 +375,30 @@ def selftest(benchmark_path):
         ok, _ = equivalent(cands[0], cands[0])
         if not ok:
             bad.append((pid, item["answer"] + "  [self-match failed]"))
-    wrong_ok, _ = equivalent(sympify("0"), parse_latex_answer(bench["B002"]["answer"])[0])
-    print("official answers parsed: %d/%d" % (parsed, len(bench)))
+    ctrl_id = sorted(bench)[0]
+    wrong_ok, _ = equivalent(sympify("0"), parse_latex_answer(bench[ctrl_id]["answer"])[0])
+    print("set: %s | official answers parsed: %d/%d" % (os.path.basename(benchmark_path), parsed, len(bench)))
     if bad:
         print("unparsed / self-match failures:")
         for pid, raw in bad:
             print("  %s  %s" % (pid, raw[:120]))
-    print("negative control (B002 answered 0): %s" % ("FAILED (bad)" if wrong_ok else "rejected (good)"))
+    print("negative control (%s answered 0): %s" % (ctrl_id, "FAILED (bad)" if wrong_ok else "rejected (good)"))
     return 0 if not bad and not wrong_ok else 1
 
 
 def main(argv=None):
     here = os.path.dirname(os.path.abspath(__file__))
     ap = argparse.ArgumentParser(description="Grade answers against the Integration Bee Benchmark.")
-    ap.add_argument("--benchmark", default=os.path.join(here, "benchmark.json"))
+    ap.add_argument("--set", dest="set_name", choices=["base", "hard"], default="base",
+                    help="which set to grade against (default: base)")
+    ap.add_argument("--benchmark", default=None,
+                    help="explicit path to a set JSON (overrides --set)")
     ap.add_argument("--answers")
     ap.add_argument("--json", dest="json_out")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args(argv)
+    if args.benchmark is None:
+        args.benchmark = os.path.join(here, "base-set.json" if args.set_name == "base" else "hard-set.json")
 
     if args.selftest:
         return selftest(args.benchmark)

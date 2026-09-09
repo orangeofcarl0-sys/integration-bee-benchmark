@@ -11,6 +11,7 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 | [`INTEGRATION-BEE-BENCHMARK.md`](INTEGRATION-BEE-BENCHMARK.md) | The dataset, human-readable (LaTeX in Markdown) |
 | [`benchmark.json`](benchmark.json) | The dataset, machine-readable |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | Source-by-source copyright and attribution |
+| [`grade.py`](grade.py) | Reference grader — scores answers with LaTeX/sympy equivalence checking |
 | [`LICENSE`](LICENSE) | CC BY 4.0 — **applies to the curator's contributions only** (see [Copyright](#copyright-and-licensing)) |
 
 ## Composition
@@ -65,6 +66,46 @@ print(data["count"], "problems")
 for p in data["problems"][:3]:
     print(p["id"], p["source"], "|", p["problem"], "->", p["answer"])
 ```
+
+## Grading
+
+[`grade.py`](grade.py) is a reference grader: it checks a solver's answers against `benchmark.json`
+while accepting **mathematically equivalent forms** — different but equal closed forms, additive
+constants for indefinite integrals (the `+C` convention), equivalent algebraic/trig rewrites, and
+high-precision decimal approximations of exact constants. Only dependency: `sympy`.
+
+```bash
+pip install sympy
+python grade.py --answers answers.json          # per-item PASS/FAIL table + score
+python grade.py --answers answers.json --json results.json
+python grade.py --selftest                      # validates the reader against the official key
+```
+
+Answer file format — a JSON list (or an object with an `answers` key):
+
+```json
+[
+  {"id": "B001", "answer_latex": "4048", "answer_sympy": "4048"},
+  {"id": "B002", "answer": "x"}
+]
+```
+
+`answer_sympy` (a sympy-parseable Python expression) is preferred when present; `answer_latex` /
+`answer` are converted by the built-in LaTeX reader.
+
+Notes and limits:
+
+- The LaTeX reader covers the notation used in this dataset: fractions with or without braces
+  (`\frac{a}{b}`, `\frac12`), roots (`\sqrt3`, `\sqrt[3]{4}`), function powers (`\tan^{2023}(x)`),
+  inverse-function notation (`\sin^{-1}`), absolute values, floor/ceiling, `\operatorname{...}`,
+  Euler's number (`e`, `ex`, `2e-4`), and multi-part answers split on `=`.
+  `python grade.py --selftest` parses **100/100** official answers and rejects a deliberately
+  wrong answer.
+- Equivalence is up to an additive constant for indefinite integrals, and within `1e-9` relative
+  tolerance for numeric answers to definite integrals — a high-precision decimal counts, an
+  approximate-but-wrong value does not.
+- The grader is a convenience, not a proof assistant. For disputed items, settle them by
+  differentiation or high-precision quadrature (issues #1–#4 show the kind of check that does).
 
 ## Selection & screening
 

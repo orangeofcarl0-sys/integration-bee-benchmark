@@ -41,6 +41,42 @@ by this repository's CC BY 4.0 license, which applies solely to the curator's co
 - **Rights:** © University of Florida Mathematics Society. Reproduced for non-commercial research
   with attribution.
 
+## Singapore Precollegiate Integration Bee — 2026 Round 2
+- **Items:** 20 (groups, quarterfinals, semifinals, third-place and Grand Final rounds)
+- **Organizer:** Singapore Precollegiate Integration Bee (SPIB).
+- **Source:** the official "SPIB 2026 Round 2 Integrals + Answers" packet.
+- **Rights:** © the SPIB organizers. Reproduced for non-commercial research with attribution.
+
+## Lisbon Integration Bee — 2025 Semifinal & Final
+- **Items:** 8
+- **Organizer:** NMATH / Lisbon Integration Bee.
+- **Source:** the official *Meia-final* and *Final* papers (answers printed with the problems).
+- **Rights:** © the Lisbon Integration Bee organizers. Reproduced for non-commercial research.
+
+## UK University Integration Bee — 2024/25 Round 3 (Tournament)
+- **Items:** 10
+- **Organizer:** UK University Integration Bee committee.
+- **Source:** the official *Round Three Tournament Solutions* (distributed to participants).
+- **Rights:** © the UK University Integration Bee and the problem authors. Removal on request.
+
+## Caltech Math Meet Integration Bee — 2025 Final (Hard)
+- **Items:** 6
+- **Organizer:** Caltech Math Meet (CMM).
+- **Source:** the official *CMM 2025 Integration Bee Final Round Hard Solutions*.
+- **Rights:** © Caltech Math Meet. Reproduced for non-commercial research with attribution.
+
+## Bonn Integration Bee (Bibee) — 2026
+- **Items:** 5
+- **Organizer:** Bibee (Bonn Integration Bee) committee.
+- **Source:** the official *Bibee 2026 Integrals WITH SOLUTIONS* packet.
+- **Rights:** © the Bibee organizers. Reproduced for non-commercial research with attribution.
+
+## Chulalongkorn University Integration Bee — 2025 Final Round
+- **Items:** 6
+- **Organizer:** Chulalongkorn University Integration Bee.
+- **Source:** the official *Integration Bee 2025 Final Round* paper (problems + solutions).
+- **Rights:** © the Chulalongkorn University organizers. Reproduced for non-commercial research.
+
 ---
 
 ## Notes

@@ -1,6 +1,6 @@
 # Integration Bee Benchmark
 
-**100 curated integration problems from real integration bees — plus a 25-problem Hard Set from the MIT Finals — each paired with the competition's own official answer.**
+**100 curated integration problems from real integration bees — plus a 100-problem Hard Set from knockout rounds worldwide — each paired with the competition's own official answer.**
 
 A small, carefully screened benchmark for evaluating mathematical integration: by language models, computer algebra systems, or humans. Every answer comes from the organizers' **official answer key / mark scheme** — never from third-party solutions, and never re-derived by the curator. Every statement was transcribed from the official paper in LaTeX and visually verified against a rendered page of the source PDF.
 
@@ -10,7 +10,7 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 |---|---|
 | [`BASE-SET.md`](BASE-SET.md) | Base Set, human-readable (LaTeX in Markdown) |
 | [`base-set.json`](base-set.json) | Base Set, machine-readable |
-| [`HARD-SET.md`](HARD-SET.md) | Hard Set (MIT Finals 2022–2026), human-readable |
+| [`HARD-SET.md`](HARD-SET.md) | Hard Set (knockout rounds worldwide), human-readable |
 | [`hard-set.json`](hard-set.json) | Hard Set, machine-readable |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | Source-by-source copyright and attribution |
 | [`grade.py`](grade.py) | Reference grader — scores answers with LaTeX/sympy equivalence checking |
@@ -22,7 +22,7 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 | Set | Problems | Rounds | File |
 |---|---|---|---|
 | **Base** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `base-set.json` |
-| **Hard** | 25 | MIT Integration Bee **Finals** 2022–2026 (4–5 min per problem) | `hard-set.json` |
+| **Hard** | 100 | Knockout/final rounds of 7 competitions (MIT Finals + Semifinals, Lisbon, UKUIB R3, Chulalongkorn, Caltech, Bonn, Singapore) | `hard-set.json` |
 
 The two sets share the same schema and grading rules; `id`s are `B###` (Base) and `H###` (Hard).
 Run them separately or concatenate the `problems` arrays.
@@ -38,16 +38,19 @@ Run them separately or concatenate the `problems` arrays.
 | University of Florida Integration Bee 2025 Written Exam | 14 | UMS official solutions |
 | **Total** | **100** | |
 
-## Composition — Hard Set (25)
+## Composition — Hard Set (100)
 
 | Source | Problems | Official answer key |
 |---|---|---|
-| MIT Integration Bee Finals 2022 | 5 | MIT Finals papers (problem / problem-with-answer) |
-| MIT Integration Bee Finals 2023 | 5 | idem |
-| MIT Integration Bee Finals 2024 | 5 | idem |
-| MIT Integration Bee Finals 2025 | 5 | idem |
-| MIT Integration Bee Finals 2026 | 5 | idem |
-| **Total** | **25** | |
+| MIT Integration Bee — Finals 2022–2026 | 25 | MIT Finals papers (problem / problem-with-answer) |
+| MIT Integration Bee — Semifinals 2022–2026 | 20 | idem |
+| Singapore Precollegiate Integration Bee 2026 — Round 2 | 20 | "Integrals + Answers" packet |
+| UKUIB 2024/25 — Round 3 Tournament | 10 | official Tournament Solutions |
+| Lisbon Integration Bee 2025 — SF + Final | 8 | answers printed with the problems |
+| Chulalongkorn 2025 — Final Round | 6 | official Solution section |
+| Caltech Math Meet 2025 — Final (Hard) | 6 | official Hard Solutions |
+| Bonn (Bibee) 2026 | 5 | official "Integrals WITH SOLUTIONS" |
+| **Total** | **100** | |
 
 All items are closed-form problems. Indefinite integrals omit `+C`; `log` is the natural logarithm
 (as specified by all four sources). `⌊·⌋` floor, `⌈·⌉` ceiling, `{·}` fractional part, `φ = (1+√5)/2`.
@@ -170,6 +173,17 @@ id (resolved under `--dsh-home`, default `$DSH_HOME` or `~/.dsh`). Override the 
 
 ## Changelog
 
+### v2.0 — 2026-09-09
+Hard Set expanded from 25 to **100** and diversified beyond MIT: now knockout/final rounds from
+**seven competitions** — MIT Finals 2022–2026 (25) + MIT Semifinals 2022–2026 (20), Singapore
+Precollegiate IB 2026 Round 2 (20), Lisbon 2025 SF/Final (8), UKUIB 2024/25 Round 3 Tournament (10),
+Chulalongkorn 2025 Final (6), Caltech 2025 Final Hard (6), Bonn 2026 (5). All answers are the
+organizers' own; statements were transcribed from the official papers and screened for consistency
+with their answers. Excluded after screening (documented, not silently fixed): UKUIB R3 B2F1#3 and
+Chulalongkorn R2#3 / R3#1 (printed answers could not be reproduced from the printed statements),
+plus a handful of ambiguous items. `grade.py` extended to parse factorials and `\zeta` and to
+compare very large constants; both sets now pass `--selftest` at 100/100.
+
 ### v1.2 — 2026-09-09
 Split the bank explicitly into two sets and renamed the files accordingly:
 
@@ -253,6 +267,12 @@ Statements and answers were transcribed from the official papers:
 |---|---|---|
 | MIT 2023 / 2024 / 2025 | MIT Integration Bee Qualifying Exams | MIT Integration Bee official answer sheets |
 | MIT 2022–2026 (Hard Set) | MIT Integration Bee Finals papers | printed in the same Finals papers (problem / problem-with-answer) |
+| Lisbon 2025 (Hard Set) | *Semifinal* / *Final* papers | answers printed with the problems |
+| UKUIB R3 2024/25 (Hard Set) | *Round Three Tournament* paper | official Tournament Solutions |
+| Caltech 2025 (Hard Set) | *Final Round Hard* paper | official Hard Solutions |
+| Bonn 2026 (Hard Set) | *Bibee 2026 Integrals* | official solutions |
+| Chulalongkorn 2025 (Hard Set) | *Final Round* paper | official Solution section |
+| Singapore 2026 R2 (Hard Set) | *Round 2 Integrals + Answers* | official answers section |
 | UKUIB 2025/26 Round 1 | *Online Round*, UK University Integration Bee | *Round One Mark Scheme* |
 | Florida 2025 | *Integration Bee 2025 Written Exam* | *2025 Written Exam solutions* |
 

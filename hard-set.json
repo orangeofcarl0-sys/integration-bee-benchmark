@@ -1,8 +1,8 @@
 {
  "name": "Integration Bee Benchmark — Hard Set",
- "version": "1.1",
+ "version": "2.0",
  "date": "2026-09-09",
- "count": 25,
+ "count": 100,
  "problems": [
   {
    "id": "H001",
@@ -178,6 +178,531 @@
    "verify": "N",
    "problem": "\\int_{-\\infty}^{\\infty}\\left(\\left(\\frac{1}{x-2}+\\frac{3}{x-4}+\\frac{5}{x-6}\\right)^{-2}+1\\right)^{-1}dx",
    "answer": "9\\pi"
+  },
+  {
+   "id": "H026",
+   "source": "Lisbon 2025 Semifinal 1 #1",
+   "verify": "N",
+   "problem": "\\int_0^{2025}\\lfloor\\sqrt{x}\\rfloor\\,dx",
+   "answer": "59730"
+  },
+  {
+   "id": "H027",
+   "source": "Lisbon 2025 Semifinal 1 #2",
+   "verify": "N",
+   "problem": "\\int_{-\\pi/2}^{\\pi/2}\\max\\big(2\\sin^2x,\\,2\\cos^2x\\big)\\,dx",
+   "answer": "\\pi+2"
+  },
+  {
+   "id": "H028",
+   "source": "Lisbon 2025 Semifinal 1 #3",
+   "verify": "N",
+   "problem": "\\int_0^1 \\frac{dx}{\\sqrt{|\\log x|}}",
+   "answer": "\\sqrt{\\pi}"
+  },
+  {
+   "id": "H029",
+   "source": "Lisbon 2025 Semifinal 1 #4",
+   "verify": "A",
+   "problem": "\\int_{-\\infty}^{\\infty} x^{100}e^{-x^2}\\,dx",
+   "answer": "\\frac{\\sqrt{\\pi}}{4^{50}}\\cdot\\frac{100!}{50!}"
+  },
+  {
+   "id": "H030",
+   "source": "Lisbon 2025 Semifinal 2 #1",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{dx}{(x^2+4)^2}",
+   "answer": "\\frac{\\pi}{32}"
+  },
+  {
+   "id": "H031",
+   "source": "Lisbon 2025 Semifinal 2 #2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{3^{-\\lfloor x\\rfloor}\\cos(\\lfloor x\\rfloor\\pi)}{2\\lfloor x\\rfloor+1}\\,dx",
+   "answer": "\\frac{\\sqrt3}{6}\\pi"
+  },
+  {
+   "id": "H032",
+   "source": "Lisbon 2025 Final #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{x^3}{e^x-1}\\,dx",
+   "answer": "\\frac{\\pi^4}{15}"
+  },
+  {
+   "id": "H033",
+   "source": "Lisbon 2025 Final #4",
+   "verify": "N",
+   "problem": "\\int_0^1 \\frac{x^4(1-x)^4}{1+x^2}\\,dx",
+   "answer": "\\frac{22}{7}-\\pi"
+  },
+  {
+   "id": "H034",
+   "source": "MIT Semifinal 2022 #1-1",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{x(e^{-x}+1)}{e^x-1}\\,dx",
+   "answer": "\\frac{\\pi^2}{3}-1"
+  },
+  {
+   "id": "H035",
+   "source": "MIT Semifinal 2022 #1-2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty} x^5 e^{-x}\\sin x\\,dx",
+   "answer": "-15"
+  },
+  {
+   "id": "H036",
+   "source": "MIT Semifinal 2022 #2-2",
+   "verify": "A",
+   "problem": "\\int \\frac{dx}{(x^2+1)^3}",
+   "answer": "\\frac{3}{8}\\arctan x+\\frac{3x^3+5x}{8(x^2+1)^2}+C"
+  },
+  {
+   "id": "H037",
+   "source": "MIT Semifinal 2022 #2-4",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/6}\\log(\\sqrt3+\\tan x)\\,dx",
+   "answer": "\\frac{\\pi}{6}\\log 2"
+  },
+  {
+   "id": "H038",
+   "source": "MIT Semifinal 2023 #1-2",
+   "verify": "N",
+   "problem": "\\int_0^1\\big(9x^9-x^{90}+9x^{99}-x^{900}+9x^{909}-x^{990}+9x^{999}-x^{9000}+\\cdots\\big)dx",
+   "answer": "1"
+  },
+  {
+   "id": "H039",
+   "source": "MIT Semifinal 2023 #1-3",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi}\\frac{2\\cos x-\\cos(2021x)-2\\cos(2022x)-\\cos(2023x)+2}{1-\\cos(2x)}\\,dx",
+   "answer": "2022\\pi"
+  },
+  {
+   "id": "H040",
+   "source": "MIT Semifinal 2023 #2-3",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{\\tanh x}{x\\cosh(2x)}\\,dx",
+   "answer": "\\log 2"
+  },
+  {
+   "id": "H041",
+   "source": "MIT Semifinal 2023 #2-4",
+   "verify": "A",
+   "problem": "\\int \\sin(4\\arctan x)\\,dx",
+   "answer": "-\\frac{4}{1+x^2}-2\\log(1+x^2)+C"
+  },
+  {
+   "id": "H042",
+   "source": "MIT Semifinal 2024 #1-1",
+   "verify": "N",
+   "problem": "\\int_{-\\infty}^{\\infty}\\frac{(x^3-4x)\\sin x+(3x^2-4)\\cos x}{(x^3-4x)^2+\\cos^2x}\\,dx",
+   "answer": "-3\\pi"
+  },
+  {
+   "id": "H043",
+   "source": "MIT Semifinal 2024 #1-2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{xe^{-2x}}{e^{-x}+1}\\,dx",
+   "answer": "1-\\frac{\\pi^2}{12}"
+  },
+  {
+   "id": "H044",
+   "source": "MIT Semifinal 2024 #1-3",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}\\sin(\\cot^2x)\\sec^2x\\,dx",
+   "answer": "\\sqrt{\\frac{\\pi}{2}}"
+  },
+  {
+   "id": "H045",
+   "source": "MIT Semifinal 2024 #2-1",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{\\sin x\\,\\sin(2x)\\sin(3x)}{x^3}\\,dx",
+   "answer": "\\pi"
+  },
+  {
+   "id": "H046",
+   "source": "MIT Semifinal 2025 #1-1",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{\\sqrt[3]{x}}{1+x^2}\\,dx",
+   "answer": "\\frac{\\pi}{\\sqrt3}"
+  },
+  {
+   "id": "H047",
+   "source": "MIT Semifinal 2025 #1-4",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{x}{e^{2x}+1}\\,dx",
+   "answer": "\\frac{\\pi^2}{48}"
+  },
+  {
+   "id": "H048",
+   "source": "MIT Semifinal 2025 #2-2",
+   "verify": "N",
+   "problem": "\\int_0^1\\frac{\\log x}{\\sqrt{x-x^2}}\\,dx",
+   "answer": "-2\\pi\\log 2"
+  },
+  {
+   "id": "H049",
+   "source": "MIT Semifinal 2025 #2-3",
+   "verify": "N",
+   "problem": "\\int_1^{\\infty}\\left(\\sum_{k=0}^{\\infty}(-1)^k\\max(0,x-k)\\right)^{-2}dx",
+   "answer": "1+\\frac{\\pi^2}{6}"
+  },
+  {
+   "id": "H050",
+   "source": "MIT Semifinal 2026 #1-1",
+   "verify": "N",
+   "problem": "\\lim_{n\\to\\infty}\\int_0^{\\infty}\\sqrt{n}\\left(\\frac{e^{x-1}}{x^x}\\right)^n dx",
+   "answer": "\\sqrt{2\\pi}"
+  },
+  {
+   "id": "H051",
+   "source": "MIT Semifinal 2026 #1-2",
+   "verify": "A",
+   "problem": "\\int\\frac{x^2-2}{(x^2+2)\\sqrt{x^4+4}}\\,dx",
+   "answer": "\\frac12\\arctan\\!\\left(\\frac{\\sqrt{x^4+4}}{2x}\\right)+C"
+  },
+  {
+   "id": "H052",
+   "source": "MIT Semifinal 2026 #2-1",
+   "verify": "N",
+   "problem": "\\lim_{n\\to\\infty}\\int_{-2}^{2}\\big(\\cdots((x^2-2)^2-2)^2\\cdots-2\\big)^4dx\\ \\ (n\\ \\text{squares})",
+   "answer": "24"
+  },
+  {
+   "id": "H053",
+   "source": "MIT Semifinal 2026 #2-3",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi}\\cos(2x)\\cos(3x)\\cos(5x)\\cos(7x)\\cos(11x)\\cos(13x)\\cos(17x)\\cos(19x)\\cos(23x)\\,dx",
+   "answer": "\\frac{5\\pi}{256}"
+  },
+  {
+   "id": "H054",
+   "source": "UKUIB R3 2024/25 Battle 2 Fight 1 #1",
+   "verify": "N",
+   "problem": "\\int_1^{e}\\frac{x\\ln x}{(1+\\ln x)^3}\\,dx",
+   "answer": "\\frac12\\left(\\frac{e^2}{4}-1\\right)"
+  },
+  {
+   "id": "H055",
+   "source": "UKUIB R3 2024/25 Battle 2 Fight 3 #1",
+   "verify": "N",
+   "problem": "\\int_3^4\\frac{x-\\sqrt{7x-x^2}}{2x-7}\\,dx",
+   "answer": "\\frac12"
+  },
+  {
+   "id": "H056",
+   "source": "UKUIB R3 2024/25 Battle 2 Fight 3 #2",
+   "verify": "N",
+   "problem": "\\int_1^{\\infty}\\frac{1+2x\\ln 2}{x\\sqrt{x\\,4^x-1}}\\,dx",
+   "answer": "\\frac{\\pi}{3}"
+  },
+  {
+   "id": "H057",
+   "source": "UKUIB R3 2024/25 Battle 2 Fight 3 #3",
+   "verify": "N",
+   "problem": "\\int \\sec x\\,(\\sec x+\\tan x)^{2025}\\,dx",
+   "answer": "\\frac{(\\sec x+\\tan x)^{2025}}{2025}+C"
+  },
+  {
+   "id": "H058",
+   "source": "UKUIB R3 2024/25 Battle 3 Fight 1 #2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{\\tan^{-1}\\!\\left(\\frac{x}{1+2x^2}\\right)-\\tan^{-1}\\!\\left(\\frac{x}{1+12x^2}\\right)}{x}\\,dx",
+   "answer": "\\frac{\\pi}{2}\\ln\\frac32"
+  },
+  {
+   "id": "H059",
+   "source": "UKUIB R3 2024/25 Battle 3 Fight 1 #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}\\sin x\\,\\sqrt{\\sin(2x)}\\,dx",
+   "answer": "\\frac{\\pi}{4}"
+  },
+  {
+   "id": "H060",
+   "source": "UKUIB R3 2024/25 Battle 3 Fight 2 #2",
+   "verify": "N",
+   "problem": "\\int_{\\pi/4}^{\\pi/2}\\sin(x)^{\\tan x}\\big(\\sec^2x\\,\\ln\\sin x+1\\big)\\,dx",
+   "answer": "1-\\frac{\\sqrt2}{2}"
+  },
+  {
+   "id": "H061",
+   "source": "UKUIB R3 2024/25 Battle 3 Fight 2 #3",
+   "verify": "N",
+   "problem": "\\int_1^{\\sqrt2}\\frac{\\sqrt{x^2+2\\sqrt{x^2-1}}}{x}\\,dx",
+   "answer": "\\frac12\\ln 2+1-\\frac{\\pi}{4}"
+  },
+  {
+   "id": "H062",
+   "source": "UKUIB R3 2024/25 Battle 3 Fight 3 #1",
+   "verify": "A",
+   "problem": "\\int_0^{\\infty}\\cos\\!\\left(x^2+\\frac{1}{x^2}\\right)dx",
+   "answer": "\\frac{\\sqrt{2\\pi}}{4}(\\cos 2-\\sin 2)"
+  },
+  {
+   "id": "H063",
+   "source": "UKUIB R3 2024/25 Battle 2 Fight 2 #2",
+   "verify": "N",
+   "problem": "\\int_0^1\\frac{\\ln(x)(2x-1)}{\\sqrt{x-x^2}}\\,dx",
+   "answer": "\\pi"
+  },
+  {
+   "id": "H064",
+   "source": "Caltech 2025 Final (Hard) #3",
+   "verify": "A",
+   "problem": "\\int\\frac{2x-9\\sqrt x+9}{(x-3\\sqrt x)^{1/3}}\\,dx",
+   "answer": "\\frac65(x-3\\sqrt x)^{5/3}+C"
+  },
+  {
+   "id": "H065",
+   "source": "Caltech 2025 Final (Hard) #5",
+   "verify": "N",
+   "problem": "\\int_0^1\\frac{x^3}{(3+2x^2)^2}\\,dx",
+   "answer": "\\frac18\\ln\\frac53-\\frac{1}{20}"
+  },
+  {
+   "id": "H066",
+   "source": "Caltech 2025 Final (Hard) #6",
+   "verify": "N",
+   "problem": "\\int_0^1\\arctan(x^2-x+1)\\,dx",
+   "answer": "\\ln 2"
+  },
+  {
+   "id": "H067",
+   "source": "Caltech 2025 Final (Hard) #7",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}e^{-x^2}\\cos(2x)\\,dx",
+   "answer": "\\frac{\\sqrt\\pi}{2e}"
+  },
+  {
+   "id": "H068",
+   "source": "Caltech 2025 Final (Hard) #8",
+   "verify": "N",
+   "problem": "\\int\\frac{dx}{2+2\\sin x+\\cos x}",
+   "answer": "\\ln\\left|\\frac{\\tan(x/2)+1}{\\tan(x/2)+3}\\right|+C"
+  },
+  {
+   "id": "H069",
+   "source": "Caltech 2025 Final (Hard) #9",
+   "verify": "A",
+   "problem": "\\int\\prod_{k=1}^{n-1}\\sqrt{2x^2-2x^2\\cos\\!\\left(\\frac{2\\pi k}{n}\\right)}\\,dx",
+   "answer": "x^n+C"
+  },
+  {
+   "id": "H070",
+   "source": "Bonn 2026 #9",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi}\\left(\\frac{1}{1+\\tan x}+\\frac{1}{1+\\cot x}\\right)dx",
+   "answer": "\\pi"
+  },
+  {
+   "id": "H071",
+   "source": "Bonn 2026 #15",
+   "verify": "N",
+   "problem": "\\int_0^{\\sqrt{2026}}\\frac{(2x)^2}{\\sqrt{2026-x^2}}\\,dx",
+   "answer": "2026\\pi"
+  },
+  {
+   "id": "H072",
+   "source": "Bonn 2026 #18",
+   "verify": "N",
+   "problem": "\\int_0^1\\prod_{n=1}^{\\infty}(1+x)^{1/n^2}\\,dx",
+   "answer": "\\frac{2^{\\pi^2/6+1}-1}{\\pi^2/6+1}"
+  },
+  {
+   "id": "H073",
+   "source": "Bonn 2026 #20",
+   "verify": "N",
+   "problem": "\\int_1^{\\infty}\\frac{dx}{\\lceil x\\rceil^2}",
+   "answer": "\\frac{\\pi^2}{6}-1"
+  },
+  {
+   "id": "H074",
+   "source": "Bonn 2026 #21",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}e^{ix}\\cos x\\,dx",
+   "answer": "\\frac{\\pi}{4}+\\frac{i}{2}"
+  },
+  {
+   "id": "H075",
+   "source": "Chulalongkorn 2025 Final R1 #3",
+   "verify": "N",
+   "problem": "\\int_0^{e}\\sin(4\\arctan x)\\,dx",
+   "answer": "4-\\frac{4}{e^2+1}-2\\ln(e^2+1)"
+  },
+  {
+   "id": "H076",
+   "source": "Chulalongkorn 2025 Final R2 #1",
+   "verify": "A",
+   "problem": "\\int_0^{2\\pi}\\left(\\sum_{k=1}^{99}k\\cos kx\\right)\\left(\\sum_{l=1}^{99}l\\cos l^2x\\right)dx",
+   "answer": "2025\\pi"
+  },
+  {
+   "id": "H077",
+   "source": "Chulalongkorn 2025 Final R2 #5",
+   "verify": "N",
+   "problem": "\\lim_{n\\to\\infty}n\\int_0^{\\pi/4}\\tan^{2n}x\\,dx",
+   "answer": "\\frac14"
+  },
+  {
+   "id": "H078",
+   "source": "Chulalongkorn 2025 Final R2 #7",
+   "verify": "A",
+   "problem": "\\int_0^{2568\\pi}x\\cos^{2025}x\\prod_{k=1}^{\\infty}\\cos\\!\\left(\\frac{x}{2^k}\\right)dx",
+   "answer": "0"
+  },
+  {
+   "id": "H079",
+   "source": "Chulalongkorn 2025 Final R3 #2",
+   "verify": "A",
+   "problem": "\\int_0^{\\pi}\\frac{\\sin^2(2^{2025}\\pi x)}{\\sin^2x}\\,dx",
+   "answer": "2^{2025}\\pi"
+  },
+  {
+   "id": "H080",
+   "source": "Chulalongkorn 2025 Final R3 #5",
+   "verify": "A",
+   "problem": "\\int_1^{e^{2025}}\\lceil\\ln x\\rceil\\,dx",
+   "answer": "2025e^{2025}-\\frac{e^{2025}-1}{e-1}"
+  },
+  {
+   "id": "H081",
+   "source": "Singapore 2026 R2 Groups R1 #2",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi}\\frac{\\sin\\!\\left((2026+\\frac12)x\\right)}{\\sin(x/2)}\\,dx",
+   "answer": "\\pi"
+  },
+  {
+   "id": "H082",
+   "source": "Singapore 2026 R2 Groups R2 #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\sin^{-1}\\!\\left(\\frac{1}{1+x^2}\\right)dx",
+   "answer": "\\ln(3+2\\sqrt2)"
+  },
+  {
+   "id": "H083",
+   "source": "Singapore 2026 R2 Groups R3 #1",
+   "verify": "A",
+   "problem": "\\int\\frac{\\ln x+\\ln\\pi}{(\\ln x)^{1-\\ln\\pi}}\\,dx",
+   "answer": "x(\\ln x)^{\\ln\\pi}+C"
+  },
+  {
+   "id": "H084",
+   "source": "Singapore 2026 R2 Groups R3 #2",
+   "verify": "N",
+   "problem": "\\int_0^1\\big(\\sin^{-1}x+2\\sin^{-1}x\\cos^{-1}x+\\cos^{-1}x\\big)dx",
+   "answer": "4-\\frac{\\pi}{2}"
+  },
+  {
+   "id": "H085",
+   "source": "Singapore 2026 R2 Groups R4 #1",
+   "verify": "N",
+   "problem": "\\int_0^1\\frac{\\ln x}{\\sqrt{1-x}}\\,dx",
+   "answer": "\\ln 16-4"
+  },
+  {
+   "id": "H086",
+   "source": "Singapore 2026 R2 Groups R4 #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\sqrt3}\\frac{x^2+2}{\\sqrt{x^2+1}}\\,dx",
+   "answer": "\\sqrt3+\\frac32\\ln(2+\\sqrt3)"
+  },
+  {
+   "id": "H087",
+   "source": "Singapore 2026 R2 Groups R5 #1",
+   "verify": "N",
+   "problem": "\\int (x+1)e^x\\ln x\\,dx",
+   "answer": "xe^x\\ln x-e^x+C"
+  },
+  {
+   "id": "H088",
+   "source": "Singapore 2026 R2 Groups R5 #2",
+   "verify": "A",
+   "problem": "\\int\\frac{x^2+2x+2}{x(x^4+4)}\\,dx",
+   "answer": "\\frac12\\ln x-\\frac14\\ln(x^2-2x+2)+\\frac12\\tan^{-1}(x-1)+C"
+  },
+  {
+   "id": "H089",
+   "source": "Singapore 2026 R2 QF #1",
+   "verify": "A",
+   "problem": "\\int_0^{2025}\\{x\\}\\,d(\\cos\\pi x)",
+   "answer": "-1"
+  },
+  {
+   "id": "H090",
+   "source": "Singapore 2026 R2 QF #2",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\left(\\frac{3x^2-9x+1}{x^3-x+1}\\right)^2dx",
+   "answer": "26"
+  },
+  {
+   "id": "H091",
+   "source": "Singapore 2026 R2 QF #3",
+   "verify": "A",
+   "problem": "\\int_1^{2027}\\prod_{k=1}^{2026}(x-k)\\sum_{j=1}^{2026}\\frac{1}{x-j}\\,dx",
+   "answer": "2026!"
+  },
+  {
+   "id": "H092",
+   "source": "Singapore 2026 R2 QF #4",
+   "verify": "N",
+   "problem": "\\int_0^{x}\\frac{\\sqrt{2-y^2+2\\sqrt{1-y^2}}-\\sqrt{2-y^2-2\\sqrt{1-y^2}}}{\\sqrt{1-y^2}}\\,dy\\ (0<x<1)",
+   "answer": "2x"
+  },
+  {
+   "id": "H093",
+   "source": "Singapore 2026 R2 SF1 #2",
+   "verify": "A",
+   "problem": "\\int_1^2\\left(1+\\frac2x+\\frac{4}{x^2}-\\frac{25}{(1+x)^2}\\right)dx",
+   "answer": "\\ln 4-\\frac76"
+  },
+  {
+   "id": "H094",
+   "source": "Singapore 2026 R2 SF1 #4",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}\\frac{\\sin^3\\theta}{(1+\\sin\\theta)^4}\\,d\\theta",
+   "answer": "\\frac{2}{35}"
+  },
+  {
+   "id": "H095",
+   "source": "Singapore 2026 R2 SF2 #1",
+   "verify": "N",
+   "problem": "\\int_4^{\\infty}\\frac{dx}{(x^2-4x+3)(x^2-4x+4)(x^2-4x+5)}",
+   "answer": "-\\frac12+\\frac{\\pi}{4}+\\frac{\\ln 3}{4}-\\frac{\\tan^{-1}2}{2}"
+  },
+  {
+   "id": "H096",
+   "source": "Singapore 2026 R2 SF2 #3",
+   "verify": "N",
+   "problem": "\\lim_{n\\to\\infty}\\int_0^{n+1}\\frac{x}{n^2+\\lfloor x\\rfloor^2}\\,dx",
+   "answer": "\\frac12\\ln 2"
+  },
+  {
+   "id": "H097",
+   "source": "Singapore 2026 R2 Third-Place #3",
+   "verify": "N",
+   "problem": "\\int_0^1\\!\\!\\int_0^1\\frac{dx\\,dy}{(1+x^2)(2+x^2+y^2)}",
+   "answer": "\\frac{\\pi^2}{32}"
+  },
+  {
+   "id": "H098",
+   "source": "Singapore 2026 R2 Third-Place #4",
+   "verify": "N",
+   "problem": "\\int_0^{\\pi/2}\\frac{dx}{\\cos^6x+\\sin^6x}",
+   "answer": "\\pi"
+  },
+  {
+   "id": "H099",
+   "source": "Singapore 2026 R2 Grand Final #3",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty}\\frac{\\tan^{-1}\\!\\left(\\frac{x}{1+2x^2}\\right)}{x}\\,dx",
+   "answer": "\\frac{\\pi}{2}\\ln 2"
+  },
+  {
+   "id": "H100",
+   "source": "Singapore 2026 R2 Grand Final #5",
+   "verify": "N",
+   "problem": "\\int_1^{\\infty}\\frac{\\ln^3 x}{x(1-x)^2}\\,dx",
+   "answer": "6\\zeta(3)-\\frac{\\pi^4}{15}"
   }
  ]
 }

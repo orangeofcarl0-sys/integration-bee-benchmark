@@ -128,6 +128,8 @@ def latex_to_sympy(t):
     t = t.replace("\\tfrac", "\\frac").replace("\\dfrac", "\\frac")
     t = t.replace("\\!", "").replace("\\,", "*").replace("\\;", "*").replace("\\ ", "*")
     t = t.replace("\\cdot", "*").replace("\\times", "*")
+    t = t.replace("\\zeta", "zeta")
+    t = re.sub(r"(\d+)\s*!", r"factorial(\1)", t)
     t = re.sub(r"\+\s*C\s*$", "", t).strip()
     t = re.sub(r"\\lfloor\s*(.*?)\s*\\rfloor", r"floor(\1)", t)
     t = re.sub(r"\\lceil\s*(.*?)\s*\\rceil", r"ceiling(\1)", t)
@@ -258,8 +260,8 @@ def equivalent(expr, official):
     free = expr.free_symbols | official.free_symbols
     if not free:                                    # constant (definite integral)
         try:
-            va, vb = complex(N(expr, 40)), complex(N(official, 40))
-            if abs(va - vb) <= CONST_RTOL * max(1.0, abs(va), abs(vb)):
+            va, vb = N(expr, 40), N(official, 40)
+            if abs(va - vb) <= CONST_RTOL * max(sympify(1), abs(va), abs(vb)):
                 return True, "numeric-const"
         except Exception:
             pass

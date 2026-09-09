@@ -17,9 +17,9 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 | [`usage.py`](usage.py) | DSH session usage/cost meter (tooling used to report the benchmark run) |
 | [`LICENSE`](LICENSE) | CC BY 4.0 — **applies to the curator's contributions only** (see [Copyright](#copyright-and-licensing)) |
 
-## Difficulty tiers
+## The two sets
 
-| Tier | Problems | Rounds | File |
+| Set | Problems | Rounds | File |
 |---|---|---|---|
 | **Base** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `base-set.json` |
 | **Hard** | 25 | MIT Integration Bee **Finals** 2022–2026 (4–5 min per problem) | `hard-set.json` |

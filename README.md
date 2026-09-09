@@ -1,6 +1,6 @@
 # Integration Bee Benchmark
 
-**100 integration problems from real integration bees — each paired with the competition's own official answer.**
+**100 curated integration problems from real integration bees — plus a 25-problem Hard Set from the MIT Finals — each paired with the competition's own official answer.**
 
 A small, carefully screened benchmark for evaluating mathematical integration: by language models, computer algebra systems, or humans. Every answer comes from the organizers' **official answer key / mark scheme** — never from third-party solutions, and never re-derived by the curator. Every statement was transcribed from the official paper in LaTeX and visually verified against a rendered page of the source PDF.
 
@@ -8,12 +8,26 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 
 | File | Description |
 |---|---|
-| [`INTEGRATION-BEE-BENCHMARK.md`](INTEGRATION-BEE-BENCHMARK.md) | The dataset, human-readable (LaTeX in Markdown) |
-| [`benchmark.json`](benchmark.json) | The dataset, machine-readable |
+| [`BASE-SET.md`](BASE-SET.md) | Base Set, human-readable (LaTeX in Markdown) |
+| [`base-set.json`](base-set.json) | Base Set, machine-readable |
+| [`HARD-SET.md`](HARD-SET.md) | Hard Set (MIT Finals 2022–2026), human-readable |
+| [`hard-set.json`](hard-set.json) | Hard Set, machine-readable |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | Source-by-source copyright and attribution |
+| [`grade.py`](grade.py) | Reference grader — scores answers with LaTeX/sympy equivalence checking |
+| [`usage.py`](usage.py) | DSH session usage/cost meter (tooling used to report the benchmark run) |
 | [`LICENSE`](LICENSE) | CC BY 4.0 — **applies to the curator's contributions only** (see [Copyright](#copyright-and-licensing)) |
 
-## Composition
+## Difficulty tiers
+
+| Tier | Problems | Rounds | File |
+|---|---|---|---|
+| **Base** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `base-set.json` |
+| **Hard** | 25 | MIT Integration Bee **Finals** 2022–2026 (4–5 min per problem) | `hard-set.json` |
+
+The two sets share the same schema and grading rules; `id`s are `B###` (Base) and `H###` (Hard).
+Run them separately or concatenate the `problems` arrays.
+
+## Composition — Base Set (100)
 
 | Source | Problems | Official answer key |
 |---|---|---|
@@ -23,6 +37,17 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 | UK University Integration Bee 2025/26 Round 1 (Online) | 30 | UKUIB Round One Mark Scheme |
 | University of Florida Integration Bee 2025 Written Exam | 14 | UMS official solutions |
 | **Total** | **100** | |
+
+## Composition — Hard Set (25)
+
+| Source | Problems | Official answer key |
+|---|---|---|
+| MIT Integration Bee Finals 2022 | 5 | MIT Finals papers (problem / problem-with-answer) |
+| MIT Integration Bee Finals 2023 | 5 | idem |
+| MIT Integration Bee Finals 2024 | 5 | idem |
+| MIT Integration Bee Finals 2025 | 5 | idem |
+| MIT Integration Bee Finals 2026 | 5 | idem |
+| **Total** | **25** | |
 
 All items are closed-form problems. Indefinite integrals omit `+C`; `log` is the natural logarithm
 (as specified by all four sources). `⌊·⌋` floor, `⌈·⌉` ceiling, `{·}` fractional part, `φ = (1+√5)/2`.
@@ -58,13 +83,72 @@ Each problem: `id` (stable identifier), `source` (competition, year, problem num
 ```python
 import json
 
-with open("benchmark.json", encoding="utf-8") as f:
+with open("base-set.json", encoding="utf-8") as f:
     data = json.load(f)
 
 print(data["count"], "problems")
 for p in data["problems"][:3]:
     print(p["id"], p["source"], "|", p["problem"], "->", p["answer"])
 ```
+
+## Grading
+
+[`grade.py`](grade.py) is a reference grader: it checks a solver's answers against `base-set.json`
+(or `hard-set.json` with `--set hard`)
+while accepting **mathematically equivalent forms** — different but equal closed forms, additive
+constants for indefinite integrals (the `+C` convention), equivalent algebraic/trig rewrites, and
+high-precision decimal approximations of exact constants. Only dependency: `sympy`.
+
+```bash
+pip install sympy
+python grade.py --answers answers.json          # Base Set: per-item PASS/FAIL table + score
+python grade.py --set hard --answers answers.json   # Hard Set
+python grade.py --answers answers.json --json results.json
+python grade.py --selftest                      # validates the reader against the official key
+```
+
+Answer file format — a JSON list (or an object with an `answers` key):
+
+```json
+[
+  {"id": "B001", "answer_latex": "4048", "answer_sympy": "4048"},
+  {"id": "B002", "answer": "x"}
+]
+```
+
+`answer_sympy` (a sympy-parseable Python expression) is preferred when present; `answer_latex` /
+`answer` are converted by the built-in LaTeX reader.
+
+Notes and limits:
+
+- The LaTeX reader covers the notation used in this dataset: fractions with or without braces
+  (`\frac{a}{b}`, `\frac12`), roots (`\sqrt3`, `\sqrt[3]{4}`), function powers (`\tan^{2023}(x)`),
+  inverse-function notation (`\sin^{-1}`), absolute values, floor/ceiling, `\operatorname{...}`,
+  Euler's number (`e`, `ex`, `2e-4`), and multi-part answers split on `=`.
+  `python grade.py --selftest` parses **100/100** official answers and rejects a deliberately
+  wrong answer.
+- Equivalence is up to an additive constant for indefinite integrals, and within `1e-9` relative
+  tolerance for numeric answers to definite integrals — a high-precision decimal counts, an
+  approximate-but-wrong value does not.
+- The grader is a convenience, not a proof assistant. For disputed items, settle them by
+  differentiation or high-precision quadrature (issues #1–#4 show the kind of check that does).
+
+## Metering (DSH-specific, optional)
+
+[`usage.py`](usage.py) is **not part of the benchmark**. It is a small helper for **DeepSeek Harness
+(DSH)** sessions: it reads DSH session logs, sums the token usage recorded on assistant messages, and
+prices every LLM call by its own timestamp against a configurable rate table (default: DeepSeek V4
+Flash peak/off-peak schedule). It is included only because the benchmark evaluation runs in this
+repository's history were metered with it; it has no dependency on the dataset.
+
+```bash
+python usage.py <session-file-or-dir-or-id> [...]   # per-session report + total
+python usage.py --selftest                          # parser smoke test
+```
+
+A session argument may be a path to a `session.v3.jsonl.zstd` file, a session directory, or a session
+id (resolved under `--dsh-home`, default `$DSH_HOME` or `~/.dsh`). Override the built-in rates with
+`--rates rates.json`.
 
 ## Selection & screening
 
@@ -85,6 +169,25 @@ for p in data["problems"][:3]:
   from the printed statements; the packet was excluded as a whole rather than cherry-picked.
 
 ## Changelog
+
+### v1.2 — 2026-09-09
+Split the bank explicitly into two sets and renamed the files accordingly:
+
+- **Base Set** — the original 100 problems (`BASE-SET.md`, `base-set.json`; ids `B001`–`B100`).
+- **Hard Set** — the 25 MIT Finals problems (`HARD-SET.md`, `hard-set.json`; ids `H001`–`H025`).
+
+`benchmark.json` / `INTEGRATION-BEE-BENCHMARK.md` are renamed to `base-set.json` / `BASE-SET.md`
+(no content change). `grade.py` now defaults to `base-set.json` and accepts `--set hard` for the
+Hard Set; `--selftest` validates whichever set is selected (base 100/100, hard 25/25).
+
+### v1.1 — 2026-09-09
+Added the **Hard Set**: all 25 MIT Integration Bee Finals problems 2022–2026 with official answers
+(`HARD-SET.md`, `hard-set.json`). Motivation: the Base Set draws only on entry-round material and
+had no knockout-round problems at all, which capped its difficulty. Every Hard Set item was verified
+(definite integrals by 35-digit quadrature; indefinite by differentiating the official antiderivative;
+floor/limit problems by exact combinatorial arguments — e.g. H015 is exactly `4/11` by a dyadic
+first-occurrence computation). The MIT Finals papers print each problem twice (alone, then with its
+answer), so the answers are the organizers' own.
 
 ### v1.0.1 — 2026-09-09
 Community review (issues #1–#4) found four transcription/metadata defects; all fixed and verified:
@@ -149,6 +252,7 @@ Statements and answers were transcribed from the official papers:
 | Source | Problem paper | Answer key |
 |---|---|---|
 | MIT 2023 / 2024 / 2025 | MIT Integration Bee Qualifying Exams | MIT Integration Bee official answer sheets |
+| MIT 2022–2026 (Hard Set) | MIT Integration Bee Finals papers | printed in the same Finals papers (problem / problem-with-answer) |
 | UKUIB 2025/26 Round 1 | *Online Round*, UK University Integration Bee | *Round One Mark Scheme* |
 | Florida 2025 | *Integration Bee 2025 Written Exam* | *2025 Written Exam solutions* |
 

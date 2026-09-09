@@ -1,6 +1,6 @@
-# Integration Bee Benchmark — 100 curated problems with official answers
+# Integration Bee Benchmark — Base Set (100 problems with official answers)
 
-**Version 1.0.1 · 2026-09-09 · from the Integration-Bee-Archive**
+**Base Set · v1.0.1 · 2026-09-09 · from the Integration-Bee-Archive**
 
 A 100-problem benchmark of integration-bee integrals whose **answers come from the competitions'
 own official answer keys**, with statements transcribed in LaTeX from the original papers (each
@@ -402,5 +402,5 @@ All statements and answers were transcribed from the archive's copies of the off
 | UKUIB 2025/26 R1 | `02_UKUIB/2025/Regular-Original.pdf` | `02_UKUIB/2025/Regular-MarkScheme.pdf` |
 | Florida 2025 | `05_Florida/2025/Qualifier.pdf` | `05_Florida/2025/Qualifier-Solutions.pdf` |
 
-Machine-readable copy: [`benchmark.json`](benchmark.json) (fields: `id`, `source`, `number`, `problem`,
+Machine-readable copy: [`base-set.json`](base-set.json) (fields: `id`, `source`, `number`, `problem`,
 `answer`, `verify`).

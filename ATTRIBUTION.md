@@ -16,6 +16,13 @@ by this repository's CC BY 4.0 license, which applies solely to the curator's co
 - **Rights:** © MIT Integration Bee / MIT. Reproduced for non-commercial research with attribution.
 - The benchmark excludes MIT 2024 #18 and MIT 2023 #18 (see README, *Documented exclusions*).
 
+## MIT Integration Bee — Finals 2022–2026 (Hard Set)
+- **Items:** 25 (Finals problems 1–5 of each year)
+- **Organizer:** MIT Integration Bee (Massachusetts Institute of Technology)
+- **Source of problems and answers:** the official Finals papers, which print each problem once
+  alone and once with its official answer (`01_MIT/<year>/Final.pdf` in the source archive).
+- **Rights:** © MIT Integration Bee / MIT. Reproduced for non-commercial research with attribution.
+
 ## UK University Integration Bee — 2025/26 Round One (Online)
 - **Items:** 30
 - **Organizer:** UK University Integration Bee committee.

@@ -1,7 +1,7 @@
 {
  "name": "Integration Bee Benchmark",
- "version": "1.0",
- "date": "2026-09-08",
+ "version": "1.0.1",
+ "date": "2026-09-09",
  "count": 100,
  "problems": [
   {
@@ -218,7 +218,7 @@
    "id": "B031",
    "source": "MIT 2025 Q12",
    "verify": "N",
-   "problem": "\\int \\sqrt[3]{x\\sqrt[4]{x\\sqrt[5]{x\\sqrt[6]{\\cdots}}}}\\,dx",
+   "problem": "\\int \\sqrt[3/1]{x\\sqrt[4/2]{x\\sqrt[5/3]{x\\sqrt[6/4]{\\cdots}}}}\\,dx",
    "answer": "\\frac{x^2}{2}"
   },
   {
@@ -560,8 +560,8 @@
   {
    "id": "B080",
    "source": "UKUIB 2025 R1 #24",
-   "verify": "A",
-   "problem": "\\int_0^{\\infty} \\frac{x^2 + 2^{-x/7} - 2^{-x/6}}{(2^{-x/7}+36x^2)(2^{-x/6}+49x^2)}\\,dx",
+   "verify": "N",
+   "problem": "\\int_0^{\\infty} \\frac{x^2 + \\frac{2^{-x/6}}{7} - \\frac{2^{-x/7}}{6}}{(2^{-x/7}+36x^2)(2^{-x/6}+49x^2)}\\,dx",
    "answer": "0"
   },
   {
@@ -581,15 +581,15 @@
   {
    "id": "B083",
    "source": "UKUIB 2025 R1 #27",
-   "verify": "A",
+   "verify": "N",
    "problem": "\\int \\frac{2^x}{(1+\\sqrt3)^x+(2+\\sqrt3)^x}\\,dx",
-   "answer": "\\frac{(\\sqrt3-1)x - \\ln\\!\\big(1+(\\sqrt3-1)^x\\big)}{\\ln(\\sqrt3-1)} + C"
+   "answer": "\\frac{(\\sqrt3-1)^x - \\ln\\!\\big(1+(\\sqrt3-1)^x\\big)}{\\ln(\\sqrt3-1)} + C"
   },
   {
    "id": "B084",
    "source": "UKUIB 2025 R1 #28",
    "verify": "O",
-   "problem": "\\int_{-90}^{90} \\operatorname{mrt}\\big(x^3-(3+a)x^2+(4+2a)x-(2+a)\\big)\\,da",
+   "problem": "\\int_{-90}^{90} \\operatorname{mrt}\\big(x^3-(3+a)x^2+(4+2a)x-(2+a)\\big)\\,da [where mrt(f) is 0 if f has fewer than two distinct real roots, else the smallest distance between distinct real roots]",
    "answer": "90\\big(45-\\sqrt{2024}\\big) - 2\\ln\\!\\big(45-\\sqrt{2024}\\big) - 3\\ln 2"
   },
   {

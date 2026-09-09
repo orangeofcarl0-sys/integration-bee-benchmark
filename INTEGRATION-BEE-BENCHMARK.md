@@ -1,6 +1,6 @@
 # Integration Bee Benchmark — 100 curated problems with official answers
 
-**Version 1.0 · 2026-09-08 · from the Integration-Bee-Archive**
+**Version 1.0.1 · 2026-09-09 · from the Integration-Bee-Archive**
 
 A 100-problem benchmark of integration-bee integrals whose **answers come from the competitions'
 own official answer keys**, with statements transcribed in LaTeX from the original papers (each
@@ -160,8 +160,8 @@ $$\int_0^{10} x\left(x-\tfrac12\right)(x-1)\,dx \qquad\qquad \textbf{Answer: } 2
 $$\int_0^{20} \left\lfloor \frac{\lceil x\rceil}{2}\right\rfloor dx \qquad\qquad \textbf{Answer: } 100$$
 
 ### B031 · MIT 2025 Q12 [N]
-$$\int \sqrt[3]{x\sqrt[4]{x\sqrt[5]{x\sqrt[6]{\cdots}}}}\,dx \qquad\qquad \textbf{Answer: } \frac{x^2}{2}$$
-*(Radical indices follow 3/1, 4/2, 5/3, 6/4, …; their reciprocal products telescope to 1, so the integrand equals `x`.)*
+$$\int \sqrt[3/1]{x\sqrt[4/2]{x\sqrt[5/3]{x\sqrt[6/4]{\cdots}}}}\,dx \qquad\qquad \textbf{Answer: } \frac{x^2}{2}$$
+*(Radical indices are the fractions 3/1, 4/2, 5/3, 6/4, … exactly as printed; their reciprocal products telescope to 1, so the integrand equals `x`.)*
 
 ### B032 · MIT 2025 Q13 [A]
 $$\int \frac{e^{2x}(x^2+x)}{(xe^x)^4+1}\,dx \qquad\qquad \textbf{Answer: } \tfrac12\arctan(x^2e^{2x})$$
@@ -319,8 +319,8 @@ $$\int_0^{\infty}\left(\frac{x}{(2^x-1)^2} - \frac{4x}{(4^x-1)^2}\right)dx \qqua
 ### B079 · UKUIB 2025 R1 #23 [N]
 $$\int_1^{e}\left(\sqrt{\ln x} + \frac{1}{e-1}\exp\!\left(\left(\frac{x-1}{e-1}\right)^2\right)\right)dx \qquad\qquad \textbf{Answer: } e$$
 
-### B080 · UKUIB 2025 R1 #24 [A]
-$$\int_0^{\infty} \frac{x^2 + 2^{-x/7} - 2^{-x/6}}{(2^{-x/7}+36x^2)(2^{-x/6}+49x^2)}\,dx \qquad\qquad \textbf{Answer: } 0$$
+### B080 · UKUIB 2025 R1 #24 [N]
+$$\int_0^{\infty} \frac{x^2 + \frac{2^{-x/6}}{7} - \frac{2^{-x/7}}{6}}{(2^{-x/7}+36x^2)(2^{-x/6}+49x^2)}\,dx \qquad\qquad \textbf{Answer: } 0$$
 
 ### B081 · UKUIB 2025 R1 #25 [N]
 $$\int_0^{25} \sqrt{1+x\sqrt{1+(x+1)\sqrt{1+(x+2)\sqrt{\cdots}}}}\,dx \qquad\qquad \textbf{Answer: } \frac{675}{2}$$
@@ -328,8 +328,8 @@ $$\int_0^{25} \sqrt{1+x\sqrt{1+(x+1)\sqrt{1+(x+2)\sqrt{\cdots}}}}\,dx \qquad\qqu
 ### B082 · UKUIB 2025 R1 #26 [N]
 $$\int_0^1 \frac{x(x-1)}{(x+1)\ln x}\,dx \qquad\qquad \textbf{Answer: } \ln\!\left(\frac{4}{\pi}\right)$$
 
-### B083 · UKUIB 2025 R1 #27 [A]
-$$\int \frac{2^x}{(1+\sqrt3)^x+(2+\sqrt3)^x}\,dx \qquad\qquad \textbf{Answer: } \frac{(\sqrt3-1)x - \ln\!\big(1+(\sqrt3-1)^x\big)}{\ln(\sqrt3-1)} + C$$
+### B083 · UKUIB 2025 R1 #27 [N]
+$$\int \frac{2^x}{(1+\sqrt3)^x+(2+\sqrt3)^x}\,dx \qquad\qquad \textbf{Answer: } \frac{(\sqrt3-1)^x - \ln\!\big(1+(\sqrt3-1)^x\big)}{\ln(\sqrt3-1)} + C$$
 
 ### B084 · UKUIB 2025 R1 #28 [O]
 $$\int_{-90}^{90} \operatorname{mrt}\big(x^3-(3+a)x^2+(4+2a)x-(2+a)\big)\,da$$

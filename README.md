@@ -84,6 +84,24 @@ for p in data["problems"][:3]:
   one item's printed bound contradicts its own answer, and several items could not be reproduced
   from the printed statements; the packet was excluded as a whole rather than cherry-picked.
 
+## Changelog
+
+### v1.0.1 — 2026-09-09
+Community review (issues #1–#4) found four transcription/metadata defects; all fixed and verified:
+
+- **B031** (MIT 2025 Q12): the LaTeX used integer radical indices (`\sqrt[3]{…}`), but the paper
+  prints **fractional** indices 3/1, 4/2, 5/3, 6/4, … (verified at 600 dpi). The LaTeX now shows them
+  explicitly; with fractional indices the reciprocal products telescope to 1, so the integrand is `x`
+  and the official answer `x²/2` is correct (closed form: `R(x) = x^{1−2/(N+2)} → x`).
+- **B080** (UKUIB 2025 R1 #24): the numerator was missing two denominators — it reads
+  `x² + 2^{−x/6}/7 − 2^{−x/7}/6`, not `x² + 2^{−x/7} − 2^{−x/6}`. With the corrected statement the
+  official answer `0` is reproduced (−1.0e−37 by 40-digit quadrature).
+- **B083** (UKUIB 2025 R1 #27): the answer's first term is `(√3−1)^x`, not `(√3−1)x`
+  (verified by differentiation; equivalent to `[a^x − ln(1+a^x)]/ln a`, `a = √3−1`).
+- **B084**: `benchmark.json` now carries the `mrt(f)` definition inline (it was only in the Markdown).
+
+Thanks to the reviewer who filed the issues.
+
 ## Copyright and licensing
 
 **Problem statements and official answers are not ours to license.** They remain the property of

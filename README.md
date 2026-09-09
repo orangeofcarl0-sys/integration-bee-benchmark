@@ -131,6 +131,23 @@ Notes and limits:
 - The grader is a convenience, not a proof assistant. For disputed items, settle them by
   differentiation or high-precision quadrature (issues #1–#4 show the kind of check that does).
 
+## Metering (DSH-specific, optional)
+
+[`usage.py`](usage.py) is **not part of the benchmark**. It is a small helper for **DeepSeek Harness
+(DSH)** sessions: it reads DSH session logs, sums the token usage recorded on assistant messages, and
+prices every LLM call by its own timestamp against a configurable rate table (default: DeepSeek V4
+Flash peak/off-peak schedule). It is included only because the benchmark evaluation runs in this
+repository's history were metered with it; it has no dependency on the dataset.
+
+```bash
+python usage.py <session-file-or-dir-or-id> [...]   # per-session report + total
+python usage.py --selftest                          # parser smoke test
+```
+
+A session argument may be a path to a `session.v3.jsonl.zstd` file, a session directory, or a session
+id (resolved under `--dsh-home`, default `$DSH_HOME` or `~/.dsh`). Override the built-in rates with
+`--rates rates.json`.
+
 ## Selection & screening
 
 1. **Definite official answer** — answers are taken only from official answer keys.

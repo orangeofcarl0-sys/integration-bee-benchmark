@@ -1,6 +1,6 @@
 # Integration Bee Benchmark
 
-**100 integration problems from real integration bees — each paired with the competition's own official answer.**
+**100 curated integration problems from real integration bees — plus a 25-problem Hard Set from the MIT Finals — each paired with the competition's own official answer.**
 
 A small, carefully screened benchmark for evaluating mathematical integration: by language models, computer algebra systems, or humans. Every answer comes from the organizers' **official answer key / mark scheme** — never from third-party solutions, and never re-derived by the curator. Every statement was transcribed from the official paper in LaTeX and visually verified against a rendered page of the source PDF.
 
@@ -8,13 +8,26 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 
 | File | Description |
 |---|---|
-| [`INTEGRATION-BEE-BENCHMARK.md`](INTEGRATION-BEE-BENCHMARK.md) | The dataset, human-readable (LaTeX in Markdown) |
-| [`benchmark.json`](benchmark.json) | The dataset, machine-readable |
+| [`INTEGRATION-BEE-BENCHMARK.md`](INTEGRATION-BEE-BENCHMARK.md) | Core set, human-readable (LaTeX in Markdown) |
+| [`benchmark.json`](benchmark.json) | Core set, machine-readable |
+| [`HARD-SET.md`](HARD-SET.md) | Hard Set (MIT Finals 2022–2026), human-readable |
+| [`hard-set.json`](hard-set.json) | Hard Set, machine-readable |
 | [`ATTRIBUTION.md`](ATTRIBUTION.md) | Source-by-source copyright and attribution |
 | [`grade.py`](grade.py) | Reference grader — scores answers with LaTeX/sympy equivalence checking |
+| [`usage.py`](usage.py) | DSH session usage/cost meter (tooling used to report the benchmark run) |
 | [`LICENSE`](LICENSE) | CC BY 4.0 — **applies to the curator's contributions only** (see [Copyright](#copyright-and-licensing)) |
 
-## Composition
+## Difficulty tiers
+
+| Tier | Problems | Rounds | File |
+|---|---|---|---|
+| **Core** | 100 | Qualifying / online / written rounds (entry-level speed rounds) | `benchmark.json` |
+| **Hard** | 25 | MIT Integration Bee **Finals** 2022–2026 (4–5 min per problem) | `hard-set.json` |
+
+The two tiers share the same schema and grading rules; `id`s are `B###` (core) and `H###` (hard).
+Run them separately or concatenate the `problems` arrays.
+
+## Composition — Core (100)
 
 | Source | Problems | Official answer key |
 |---|---|---|
@@ -24,6 +37,17 @@ A small, carefully screened benchmark for evaluating mathematical integration: b
 | UK University Integration Bee 2025/26 Round 1 (Online) | 30 | UKUIB Round One Mark Scheme |
 | University of Florida Integration Bee 2025 Written Exam | 14 | UMS official solutions |
 | **Total** | **100** | |
+
+## Composition — Hard Set (25)
+
+| Source | Problems | Official answer key |
+|---|---|---|
+| MIT Integration Bee Finals 2022 | 5 | MIT Finals papers (problem / problem-with-answer) |
+| MIT Integration Bee Finals 2023 | 5 | idem |
+| MIT Integration Bee Finals 2024 | 5 | idem |
+| MIT Integration Bee Finals 2025 | 5 | idem |
+| MIT Integration Bee Finals 2026 | 5 | idem |
+| **Total** | **25** | |
 
 All items are closed-form problems. Indefinite integrals omit `+C`; `log` is the natural logarithm
 (as specified by all four sources). `⌊·⌋` floor, `⌈·⌉` ceiling, `{·}` fractional part, `φ = (1+√5)/2`.
@@ -127,6 +151,15 @@ Notes and limits:
 
 ## Changelog
 
+### v1.1 — 2026-09-09
+Added the **Hard Set**: all 25 MIT Integration Bee Finals problems 2022–2026 with official answers
+(`HARD-SET.md`, `hard-set.json`). Motivation: the core set draws only on entry-round material and
+had no knockout-round problems at all, which capped its difficulty. Every Hard Set item was verified
+(definite integrals by 35-digit quadrature; indefinite by differentiating the official antiderivative;
+floor/limit problems by exact combinatorial arguments — e.g. H015 is exactly `4/11` by a dyadic
+first-occurrence computation). The MIT Finals papers print each problem twice (alone, then with its
+answer), so the answers are the organizers' own.
+
 ### v1.0.1 — 2026-09-09
 Community review (issues #1–#4) found four transcription/metadata defects; all fixed and verified:
 
@@ -190,6 +223,7 @@ Statements and answers were transcribed from the official papers:
 | Source | Problem paper | Answer key |
 |---|---|---|
 | MIT 2023 / 2024 / 2025 | MIT Integration Bee Qualifying Exams | MIT Integration Bee official answer sheets |
+| MIT 2022–2026 (Hard Set) | MIT Integration Bee Finals papers | printed in the same Finals papers (problem / problem-with-answer) |
 | UKUIB 2025/26 Round 1 | *Online Round*, UK University Integration Bee | *Round One Mark Scheme* |
 | Florida 2025 | *Integration Bee 2025 Written Exam* | *2025 Written Exam solutions* |
 
